@@ -47,8 +47,12 @@ function acl_get_wlmopts( $atts, $content ) {
 	echo '
 	<style>
 		.grid {
-			display: grid;
-			grid-template-columns: repeat(4,1fr); 
+			display: flex;
+			flex-direction: row;
+			flex-wrap: no-wrap;
+			justify-content: center;
+			align-items: stretch;
+			align-content: center;
 			max-width: 100%;
 		}
 		
@@ -57,8 +61,8 @@ function acl_get_wlmopts( $atts, $content ) {
 		}
 		
 		.grid .header p.item {
-			align-self: stretch;
-			justify-self: stretch;
+			flex-grow: 0;
+			align-sefl: center;
 			color: #ffffff;
 			font-weight: bold;
 		}
