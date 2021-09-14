@@ -14,7 +14,8 @@ Version 1.0 - Original Version
 
 function acl_get_wlmopts( $atts, $content ) {
 	$members = wlmapi_the_level_members(1631561301);
-	foreach ($members as $k=>$v) {
+	$memmore = $members['_more_');
+	foreach ($memmore as $k=>$v) {
 		echo 'Key: '.$k.'<br />';
 		var_dump ($v);
 		echo '<br />';
