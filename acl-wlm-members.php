@@ -12,15 +12,9 @@ Changelog
 Version 1.0 - Original Version
 */
 
-function acl_wlm_list_members_init() {
-	include( 'wlmapiclass.php' );
-	$wlmapi = new wlmapiclass('http://yourblog.com/', 'yourAPIKey');
-	$wlmapi->return_format = 'php'; // <- value can also be xml or json
-}
-
 function acl_get_wlmopts( $atts, $content ) {
-	$wlmopts = get_option('WishListMemberOptions');
-	var_dump( $wlmopts );
+	$members = wlmapi_the_level_members(1631561301);
+     print_r($members);
 	// return $wlmoptprint;
 }
 add_shortcode ( 'acl_wlmoptprint', 'acl_get_wlmopts' );
