@@ -45,10 +45,10 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 	ob_start();
 	echo '<div class="grid">
-	  <div class="column"></div>
-	  <div class="column"></div>
-	  <div class="column"></div>
-	  <div class="column"></div>
+	  <div class="column">1</div>
+	  <div class="column">2</div>
+	  <div class="column">3</div>
+	  <div class="column">4</div>
 	</div>';
 	
 
