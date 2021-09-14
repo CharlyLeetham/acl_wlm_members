@@ -49,7 +49,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		.grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr 80%; 
-			max-width: 480px;
+			max-width: 100%;
 		}
 	</style>
 	
