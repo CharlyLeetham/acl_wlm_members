@@ -23,10 +23,10 @@ function acl_get_wlmopts( $atts, $content ) {
 			echo '<br />';
 					echo '<br />';
 		}
-
 	}
-     //print_r($members);
-	// return $wlmoptprint;
+	
+	
+
 }
 add_shortcode ( 'acl_wlmoptprint', 'acl_get_wlmopts' );
 
