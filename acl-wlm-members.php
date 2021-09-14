@@ -48,7 +48,7 @@ function acl_get_wlmopts( $atts, $content ) {
 	<style>
 		.grid {
 			display: grid;
-			grid-template-columns: 1fr 1fr 80%; 
+			grid-template-columns: repeat(4,1fr); 
 			max-width: 100%;
 		}
 	</style>
