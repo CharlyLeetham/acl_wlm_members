@@ -51,16 +51,21 @@ function acl_get_wlmopts( $atts, $content ) {
 			grid-template-columns: repeat(4,1fr); 
 			max-width: 100%;
 		}
+		
+		.grid .header {
+			background-color: #779ccd;
+			align-self: stretch;
+			color: #ffffff;
+			font-weight: bold;
+		}
 	</style>
 	
 	<div class="grid">
-	  <div class="column">1</div>
-	  <div class="column">2</div>
-	  <div class="column">3</div>
-	  <div class="column">4</div>
+	  <div class="column header">1</div>
+	  <div class="column header">2</div>
+	  <div class="column header">3</div>
+	  <div class="column header">4</div>
 	</div>';
-	
-
 	
 	foreach ( $approvids as $k => $v ) {
 		$approvmem = wlmapi_get_member($v);		 
