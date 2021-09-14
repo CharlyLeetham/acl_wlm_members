@@ -17,19 +17,10 @@ function acl_get_wlmopts( $atts, $content ) {
 	$members = wlmapi_the_level_members(1631561301); // Feed the membership level ID in as as shortcode att.
 	$memmore = $members['members']['member'];  //Get the member details based on the Membership level ID.
 	$allowed  = [1631561301];	// this is the Membership level we're looking for. This will need to be fed in as a shortcode att.
-	echo '<pre>';	
 	
 	foreach ( $memmore as $k=>$v ) { //Cycle through the members and get their ID's. $memmore only has the basic user details for the members in the level. We need to get more.
-		// echo 'Key: '.$k.'<br />';
-		// var_dump ( $v );
-		// $memlev[$i] = $v['id'];
-		// $i++;
 		$levels = wlmapi_get_member_levels($v['id']); //Using the member ID, get the membership level details. We're going to use this information to find those that need approval. 
-		// var_dump($levels);
-		// echo '<br /><br />'	
 		foreach ( $levels as $k2=>$v2 ) { // Because get_member_levels pulls back all levels a member is in, we're going to filter for only the level we're looking.
-			// echo 'Key2: '.$k2.'<br />';
-			// var_dump( $v2 );		
 			$filtered = array_filter(
 				$levels,
 				function ($k2) use ($allowed) {
@@ -42,11 +33,8 @@ function acl_get_wlmopts( $atts, $content ) {
 		//Now we have an array ($filtered) that has the members we're looking for and only the details of the membership level we're working with.
 
 		foreach ( $filtered as $k3 => $v3 ) { //Loop through $filtered and find the members who require approval.
-			// var_dump($v3);
-			// echo '<br />';
 			$levstatus = $v3->Status;
 			if ( $levstatus[0] == 'For Approval' ) {
-				// echo 'Member '. $v['id'].' We have a hit <br />';
 				$approvids[$i] = $v['id'];
 				$i++;
 			}
@@ -57,47 +45,26 @@ function acl_get_wlmopts( $atts, $content ) {
 
 	
 	foreach ( $approvids as $k => $v ) {
-		 $approvmem = wlmapi_get_member($v);
-		 // var_dump ( $approvmem );
-		 
-		 
-// ["wldata"]=>
-        // object(stdClass)#6214 (17) {
-          // ["custom_department"]=>
-          // &string(8) "Aviation"
-          // ["custom_dis_defence"]=>
-          // &string(4) "2024"
-          // ["custom_dropdown_field"]=>
-          // &string(21) "Humanities & Theology"
-          // ["custom_faculty"]=>
-          // &string(8) "Aviation"
-          // ["custom_gender"]=>
-          // &string(6) "Female"
-          // ["custom_other_dept"]=>
-          // &string(0) ""
-          // ["custom_other_faculty"]=>
-          // &string(0) ""
-          // ["custom_text_field"]=>
-          // &string(4) "2024"		 
+		$approvmem = wlmapi_get_member($v);		 
+		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
 
-			$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
-			var_dump ( $memdata );
-			if ( $memdata->custom_department !== 'Other' ) {
-			echo 'Department: '.$memdata->custom_department.'<br />';
-			else {
-				echo 'Other Department: '.$memdata->custom_other_dept.'<br />';
-			}
-			
-			if ( $memdata->custom_faculty !== 'Other' ) {
-				echo 'Faculty: '.$memdata->custom_faculty.'<br />';
-			} else {
-				echo 'Other Faculty: '.$memdata->custom_other_faculty.'<br />';
-			}
-			echo 'Dissertation Defence: '.$memdata->custom_dis_defence.'<br />';
-			echo 'Gender: '.$memdata->custom_gender.'<br />';
+		echo 'Name: '. $user_info->first_name .' ' .$user_info->last_name.'<br />';		 	 
+		echo 'User Email: '.$approvmem['member'][0]['UserInfo']['user_email'].'<br />';
+		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
+		if ( $memdata->custom_department !== 'Other' ) {
+		echo 'Department: '.$memdata->custom_department.'<br />';
+		} else {
+			echo 'Other Department: '.$memdata->custom_other_dept.'<br />';
+		}
+		
+		if ( $memdata->custom_faculty !== 'Other' ) {
+			echo 'Faculty: '.$memdata->custom_faculty.'<br />';
+		} else {
+			echo 'Other Faculty: '.$memdata->custom_other_faculty.'<br />';
+		}
+		echo 'Dissertation Defence: '.$memdata->custom_dis_defence.'<br />';
+		echo 'Gender: '.$memdata->custom_gender.'<br />';
 	}
-
-	echo '</pre>';		 
 
 }
 add_shortcode ( 'acl_wlmoptprint', 'acl_get_wlmopts' );
