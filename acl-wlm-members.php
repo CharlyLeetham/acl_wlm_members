@@ -56,7 +56,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			background-color: #779ccd;
 		}
 		
-		.grid .header .item {
+		.grid .header p.item {
 			align-self: stretch;
 			color: #ffffff;
 			font-weight: bold;
