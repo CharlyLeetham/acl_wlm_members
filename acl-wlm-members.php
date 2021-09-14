@@ -58,6 +58,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		
 		.grid .header p.item {
 			align-self: stretch;
+			justify-self: stretch;
 			color: #ffffff;
 			font-weight: bold;
 		}
