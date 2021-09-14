@@ -80,14 +80,21 @@ function acl_get_wlmopts( $atts, $content ) {
           // ["custom_text_field"]=>
           // &string(4) "2024"		 
 
-		 $memdata = $approvmem['member'][0]['UserInfo']['wldata'];
-		 var_dump ( $memdata );
-		 echo 'Department: '.$memdata->custom_department.'<br />';
-		 echo 'Other Department: '.$memdata->custom_other_dept.'<br />';
-		 echo 'Faculty: '.$memdata->custom_faculty.'<br />';
-		 echo 'Other Faculty: '.$memdata->custom_other_faculty.'<br />';
-		 echo 'Dissertation Defence: '.$memdata->custom_dis_defence.'<br />';
-		 echo 'Gender: '.$memdata->custom_gender.'<br />';
+			$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
+			var_dump ( $memdata );
+			if ( $memdata->custom_department !== 'Other' ) {
+			echo 'Department: '.$memdata->custom_department.'<br />';
+			else {
+				echo 'Other Department: '.$memdata->custom_other_dept.'<br />';
+			}
+			
+			if ( $memdata->custom_faculty !== 'Other' ) {
+				echo 'Faculty: '.$memdata->custom_faculty.'<br />';
+			} else {
+				echo 'Other Faculty: '.$memdata->custom_other_faculty.'<br />';
+			}
+			echo 'Dissertation Defence: '.$memdata->custom_dis_defence.'<br />';
+			echo 'Gender: '.$memdata->custom_gender.'<br />';
 	}
 
 	echo '</pre>';		 
