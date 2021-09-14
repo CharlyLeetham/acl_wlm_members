@@ -50,10 +50,14 @@ function acl_get_wlmopts( $atts, $content ) {
 			display: flex;
 			flex-direction: row;
 			flex-wrap: no-wrap;
-			justify-content: center;
+			justify-content: space-around;
 			align-items: stretch;
 			align-content: center;
 			max-width: 100%;
+		}
+		
+		.grid > * {
+			flex: 1 100%;
 		}
 		
 		.grid .header {
