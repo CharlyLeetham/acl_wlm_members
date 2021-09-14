@@ -18,10 +18,12 @@ function acl_wlm_list_members_init() {
 	$wlmapi->return_format = 'php'; // <- value can also be xml or json
 }
 
-function acl_get_wlmopts() {
+function acl_get_wlmopts( $atts, $content ) {
 	$wlmopts = get_option('WishListMemberOptions');
-	var_dump( $wlmopts );
+	$wlmoptprint = var_dump( $wlmopts );
+	return $wlmoptprint;
 }
+add_shortcode ( 'acl_wlmoptprint', 'acl_get_wlmopts' );
 
 
 function acl_listwlmopts( $atts,$content ) {
