@@ -44,7 +44,16 @@ function acl_get_wlmopts( $atts, $content ) {
 	// $approvids is the list we need to display
 	
 	ob_start();
-	echo '<div class="grid">
+	echo '
+	<style>
+		.grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr 80%; 
+			max-width: 480px;
+		}
+	</style>
+	
+	<div class="grid">
 	  <div class="column">1</div>
 	  <div class="column">2</div>
 	  <div class="column">3</div>
