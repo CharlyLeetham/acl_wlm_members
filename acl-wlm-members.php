@@ -62,6 +62,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		
 		.grid .header {
 			background-color: #779ccd;
+			text-align: center;
 		}
 		
 		.grid .header p.item {
