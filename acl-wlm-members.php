@@ -54,6 +54,9 @@ function acl_get_wlmopts( $atts, $content ) {
 		
 		.grid .header {
 			background-color: #779ccd;
+		}
+		
+		.grid .header .item {
 			align-self: stretch;
 			color: #ffffff;
 			font-weight: bold;
@@ -61,10 +64,10 @@ function acl_get_wlmopts( $atts, $content ) {
 	</style>
 	
 	<div class="grid">
-	  <div class="column header">1</div>
-	  <div class="column header">2</div>
-	  <div class="column header">3</div>
-	  <div class="column header">4</div>
+	  <div class="column header"><p class="item">1</p></div>
+	  <div class="column header"><p class="item">2</p></div>
+	  <div class="column header"><p class="item">3</p></div>
+	  <div class="column header"><p class="item">4</p></div>
 	</div>';
 	
 	foreach ( $approvids as $k => $v ) {
