@@ -18,13 +18,16 @@ function acl_get_wlmopts( $atts, $content ) {
 	$i = 0;
 	foreach ( $memmore as $k=>$v ) {
 		echo 'Key: '.$k.'<br />';
-		foreach ( $v as $k1=>$v1 ) {
-			$memlev[$i] = $v1['id'];
-			$i++;
-		}
+		var_dump ( $v['id'] );
+		$memlev[$i] = $v['id'];
+		$i++;
+		$levels = wlmapi_get_member_levels($v['id']);
+		echo '<pre>';
+			var_dump($levels);
+			echo '<br /><br />';
+		echo '</pre>';
 	}
-	
-	var_dump ( $memlevel );
+	// var_dump ( $memlev );
 	
 	
 
