@@ -14,7 +14,11 @@ Version 1.0 - Original Version
 
 function acl_get_wlmopts( $atts, $content ) {
 	$members = wlmapi_the_level_members(1631561301);
-     print_r($members);
+	foreach ($members as $k,$v) {
+		echo 'Key: '.$k;
+		var_dump ($v);
+	}
+     //print_r($members);
 	// return $wlmoptprint;
 }
 add_shortcode ( 'acl_wlmoptprint', 'acl_get_wlmopts' );
