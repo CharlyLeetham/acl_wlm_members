@@ -49,11 +49,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		.grid {
 			display: flex;
 			flex-direction: row;
-			flex-wrap: no-wrap;
-			justify-content: space-around;
-			align-items: stretch;
-			align-content: center;
-			max-width: 100%;
+			flex-wrap: wrap;
 		}
 		
 		.grid > * {
@@ -66,8 +62,6 @@ function acl_get_wlmopts( $atts, $content ) {
 		}
 		
 		.grid .header p.item {
-			flex-grow: 0;
-			align-sefl: center;
 			color: #ffffff;
 			font-weight: bold;
 		}
