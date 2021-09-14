@@ -42,6 +42,15 @@ function acl_get_wlmopts( $atts, $content ) {
 	}
 	
 	// $approvids is the list we need to display
+	
+	ob_start();
+	echo '<div class="grid">
+	  <div class="column"></div>
+	  <div class="column"></div>
+	  <div class="column"></div>
+	  <div class="column"></div>
+	</div>';
+	
 
 	
 	foreach ( $approvids as $k => $v ) {
@@ -65,7 +74,10 @@ function acl_get_wlmopts( $atts, $content ) {
 		echo 'Dissertation Defence: '.$memdata->custom_dis_defence.'<br />';
 		echo 'Gender: '.$memdata->custom_gender.'<br />';
 	}
-
+	
+	$output = ob_get_contents();
+	ob_end_clean();
+	echo $output;
 }
 add_shortcode ( 'acl_wlmoptprint', 'acl_get_wlmopts' );
 
