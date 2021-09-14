@@ -20,8 +20,8 @@ function acl_wlm_list_members_init() {
 
 function acl_get_wlmopts( $atts, $content ) {
 	$wlmopts = get_option('WishListMemberOptions');
-	$wlmoptprint = var_dump( $wlmopts );
-	return $wlmoptprint;
+	var_dump( $wlmopts );
+	// return $wlmoptprint;
 }
 add_shortcode ( 'acl_wlmoptprint', 'acl_get_wlmopts' );
 
