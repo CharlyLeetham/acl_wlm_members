@@ -22,14 +22,25 @@ function acl_get_wlmopts( $atts, $content ) {
 		$memlev[$i] = $v['id'];
 		$i++;
 		$levels = wlmapi_get_member_levels($v['id']);
-		echo '<pre>';
-			var_dump($levels);
-			echo '<br /><br />';
-		echo '</pre>';
+		// echo '<pre />';
+			// var_dump($levels);
+			// echo '<br /><br />';
+		// echo '</pre>';
+		
+		$allowed  = [1631561301];
+		$filtered = array_filter(
+			$levels,
+			fn ($key) => in_array($key, $allowed),
+			ARRAY_FILTER_USE_KEY
+		);	
+
+		var_dump ($filtered);
+		echo '<br />';
+		
 	}
 	// var_dump ( $memlev );
 	
-	
+
 
 }
 add_shortcode ( 'acl_wlmoptprint', 'acl_get_wlmopts' );
