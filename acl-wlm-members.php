@@ -49,7 +49,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		.grid {
 			display: flex;
 			flex-direction: row;
-			flex-wrap: no-wrap;
+			flex-wrap: wrap;
 		}
 		
 		.grid > * {
