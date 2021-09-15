@@ -91,15 +91,6 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column "><div class="item">Dissertation Defence</div></div>
 			<div class="column "><div class="item">Approve</div></div>
 		</div> <!-- row -->
-		<div class="row">
-			<div class="column"><div class="item">Full Name</div></div>
-			<div class="column "><div class="item">LU Email</div></div>
-			<div class="column "><div class="item">Gender</div></div>
-			<div class="column "><div class="item">Faculty</div></div>
-			<div class="column "><div class="item">Department</div></div>
-			<div class="column "><div class="item">Dissertation Defence</div></div>
-			<div class="column "><div class="item">Approve</div></div>
-		</div> <!-- row -->		
 	</div> <!-- grid -->';		
 	foreach ( $approvids as $k => $v ) {
 		$approvmem = wlmapi_get_member($v);		 
