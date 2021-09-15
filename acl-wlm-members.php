@@ -78,7 +78,6 @@ function acl_get_wlmopts( $atts, $content ) {
 	</style>
 	
 	<div class="grid">
-		<div class="row header">
 			<div class="column"><p class="item">Full Name</p></div>
 			<div class="column "><p class="item">LU Email</p></div>
 			<div class="column "><p class="item">Gender</p></div>
@@ -88,7 +87,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column "><p class="item">Approve</p></div>';
 
 
-	foreach ( $approvids as $k => $v ) {
+/*	foreach ( $approvids as $k => $v ) {
 		$approvmem = wlmapi_get_member($v);		 
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
 		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
@@ -113,8 +112,8 @@ function acl_get_wlmopts( $atts, $content ) {
 			echo '</p></div>
 			<div class="column "><p class="item">$memdata->custom_dis_defence</p></div>
 			<div class="column "><p class="item">chk</p></div>';
-	}
-	echo '</div>';
+	}*/
+		echo '</div>';
 	$output = ob_get_contents();
 	ob_end_clean();
 	echo $output;
