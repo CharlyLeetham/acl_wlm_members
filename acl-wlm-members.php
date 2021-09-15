@@ -60,10 +60,11 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex: 1;
 			background-color: #779ccd;
 			text-align: center;
+			padding: 10px 0;			
 		}
 
 		.grid .header:last-child {
-			flex: -1;
+			flex: 0;
 			background-color: #779ccd;
 			text-align: center;
 		}
@@ -72,7 +73,6 @@ function acl_get_wlmopts( $atts, $content ) {
 			color: #ffffff;
 			font-weight: bold;
 			margin: 0;
-			padding: 10px 0;
 		}
 	</style>
 	
