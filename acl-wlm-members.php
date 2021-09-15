@@ -99,9 +99,10 @@ function acl_get_wlmopts( $atts, $content ) {
 			echo $memdata->custom_faculty;
 		else {
 			echo $memdata->custom_other_faculty;
+		}
 		echo '</p></div>
 		<div class="column header"><p class="item">';
-				if ( $memdata->custom_department !== 'Other' ) {
+		if ( $memdata->custom_department !== 'Other' ) {
 			echo $memdata->custom_department;
 		} else {
 			echo $memdata->custom_other_dept;
