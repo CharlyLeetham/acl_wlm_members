@@ -62,7 +62,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		}
 		
 		.grid .column {
-			/*flex: 1;*/
+			flex: 1;
 		}
 
 		.grid .column:last-child {
