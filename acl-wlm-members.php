@@ -49,13 +49,14 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 		.grid {
 			margin: 15px;
-			background-color: #ff0000;
 		}
+		
 		.row {
 			display: flex;
 			flex-flow: row wrap;	
 			width: 100%;
-			padding: 10px 5px;				
+			padding: 10px 5px;
+			text-align: center;
 		}
 		
 		.grid .row.header {
@@ -100,12 +101,12 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column "><div class="item">Approve</div></div>
 		</div> <!-- row -->		
 	</div> <!-- grid -->';		
-/*	foreach ( $approvids as $k => $v ) {
+	foreach ( $approvids as $k => $v ) {
 		$approvmem = wlmapi_get_member($v);		 
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
 		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
 		echo ' 
-	
+		<div class="row">
 			<div class="column "><p class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</p></div>
 			<div class="column "><p class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</p></div>
 			<div class="column "><p class="item">'.$memdata->custom_gender.'</p></div>
@@ -124,8 +125,9 @@ function acl_get_wlmopts( $atts, $content ) {
 			}
 			echo '</p></div>
 			<div class="column "><p class="item">$memdata->custom_dis_defence</p></div>
-			<div class="column "><p class="item">chk</p></div>';
-	}*/
+			<div class="column "><p class="item">chk</p></div>
+		</div>';
+	}
 
 	$output = ob_get_contents();
 	ob_end_clean();
