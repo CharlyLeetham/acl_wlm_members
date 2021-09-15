@@ -49,7 +49,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		.grid {
 			display: flex;
 			flex-direction: row;
-			flex-wrap: wrap;
+			flex-wrap: no-wrap;
 		}
 		
 		.grid > * {
@@ -91,25 +91,25 @@ function acl_get_wlmopts( $atts, $content ) {
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
 		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
 		echo ' 
-		<div class="column"><p class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</p></div>
-		<div class="column header"><p class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</p></div>
-		<div class="column header"><p class="item">'.$memdata->custom_gender.'</p></div>
-		<div class="column header"><p class="item">';
+		<div class="column row"><p class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</p></div>
+		<div class="column row"><p class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</p></div>
+		<div class="column row"><p class="item">'.$memdata->custom_gender.'</p></div>
+		<div class="column row"><p class="item">';
 		if ( $memdata->custom_faculty !== 'Other' ) {
 			echo $memdata->custom_faculty;
 		} else {
 			echo $memdata->custom_other_faculty;
 		}
 		echo '</p></div>
-		<div class="column header"><p class="item">';
+		<div class="column row"><p class="item">';
 		if ( $memdata->custom_department !== 'Other' ) {
 			echo $memdata->custom_department;
 		} else {
 			echo $memdata->custom_other_dept;
 		}
 		echo '</p></div>
-		<div class="column header"><p class="item">$memdata->custom_dis_defence</p></div>
-		<div class="column header"><p class="item">chk</p></div>';
+		<div class="column row"><p class="item">$memdata->custom_dis_defence</p></div>
+		<div class="column row"><p class="item">chk</p></div>';
 	}
 	echo '</div>';
 	$output = ob_get_contents();
