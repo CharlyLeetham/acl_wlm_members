@@ -55,12 +55,12 @@ function acl_get_wlmopts( $atts, $content ) {
 			display: flex;
 			flex-flow: row wrap;	
 			width: 100%;
+			padding: 10px 5px;				
 		}
 		
 		.grid .row.header {
 			background-color: #779ccd;
-			text-align: center;
-			padding: 10px 5px;			
+			text-align: center;		
 		}
 		
 		.column {
