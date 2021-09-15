@@ -57,16 +57,17 @@ function acl_get_wlmopts( $atts, $content ) {
 		}
 		
 		.grid .header {
-			flex: 1;
 			background-color: #779ccd;
 			text-align: center;
 			padding: 10px 5px;			
 		}
+		
+		.grid .column {
+			flex: 1;
+		}
 
-		.grid .header:last-child {
+		.grid .column:last-child {
 			flex: 0;
-			background-color: #779ccd;
-			text-align: center;
 		}
 		
 		.grid .header p.item {
@@ -78,7 +79,7 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 	<div class="grid">
 		<div class="row header">
-			<div class="column "><p class="item">Full Name</p></div>
+			<div class="column"><p class="item">Full Name</p></div>
 			<div class="column "><p class="item">LU Email</p></div>
 			<div class="column "><p class="item">Gender</p></div>
 			<div class="column "><p class="item">Faculty</p></div>
