@@ -49,6 +49,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		.grid {
 			display: flex;
 			flex-flow: row wrap;
+			justify-content: space-around;			
 		}
 		
 		.grid > * {
