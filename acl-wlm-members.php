@@ -91,7 +91,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
 		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
 		echo ' 
-		<div class="column"><p class="item">'$user_info->first_name .' ' .$user_info->last_name.'</p></div>
+		<div class="column"><p class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</p></div>
 		<div class="column header"><p class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</p></div>
 		<div class="column header"><p class="item">'.$memdata->custom_gender.'</p></div>
 		<div class="column header"><p class="item">';
