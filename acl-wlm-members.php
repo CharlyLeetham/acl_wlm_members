@@ -48,22 +48,22 @@ function acl_get_wlmopts( $atts, $content ) {
 	<style>
 	
 		.grid {
-			
+			margin: 15px;
+			background-color: #ff0000;
 		}
-		.grid .row {
+		.row {
 			display: flex;
-			flex-flow: row wrap;
-			justify-content: space-around;	
+			flex-flow: row wrap;	
 			width: 100%;
 		}
 		
-		.row .header {
+		.grid .row.header {
 			background-color: #779ccd;
 			text-align: center;
 			padding: 10px 5px;			
 		}
 		
-		.grid .column {
+		.column {
 			display: flex;
 			flex: 1;
 			flex-direction: column;
@@ -74,7 +74,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex: 0;
 		}
 		
-		.grid .header p.item {
+		.grid .header .item {
 			color: #ffffff;
 			font-weight: bold;
 			margin: 0;
@@ -82,15 +82,16 @@ function acl_get_wlmopts( $atts, $content ) {
 	</style>
 	
 	<div class="grid">
-		<div class="row">
-			<div class="column"><p class="item">Full Name</p></div>
-			<div class="column "><p class="item">LU Email</p></div>
-			<div class="column "><p class="item">Gender</p></div>
-			<div class="column "><p class="item">Faculty</p></div>
-			<div class="column "><p class="item">Department</p></div>
-			<div class="column "><p class="item">Dissertation Defence</p></div>
-			<div class="column "><p class="item">Approve</p></div>
-		</div> <!-- row -->';
+		<div class="row header">
+			<div class="column"><div class="item">Full Name</div></div>
+			<div class="column "><div class="item">LU Email</div></div>
+			<div class="column "><div class="item">Gender</div></div>
+			<div class="column "><div class="item">Faculty</div></div>
+			<div class="column "><div class="item">Department</div></div>
+			<div class="column "><div class="item">Dissertation Defence</div></div>
+			<div class="column "><div class="item">Approve</div></div>
+		</div> <!-- row -->
+	</div> <!-- grid -->';		
 /*	foreach ( $approvids as $k => $v ) {
 		$approvmem = wlmapi_get_member($v);		 
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
@@ -117,7 +118,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column "><p class="item">$memdata->custom_dis_defence</p></div>
 			<div class="column "><p class="item">chk</p></div>';
 	}*/
-		echo '</div> <!-- grid -->';
+
 	$output = ob_get_contents();
 	ob_end_clean();
 	echo $output;
