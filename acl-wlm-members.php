@@ -46,24 +46,28 @@ function acl_get_wlmopts( $atts, $content ) {
 	ob_start();
 	echo '
 	<style>
+	
 		.grid {
+			
+		}
+		.grid .row {
 			display: flex;
 			flex-flow: row wrap;
-			justify-content: space-around;			
+			justify-content: space-around;	
+			width: 100%;
 		}
 		
-		.grid > * {
-			flex: 1 100%;
-		}
-		
-		.grid .header {
+		.row .header {
 			background-color: #779ccd;
 			text-align: center;
 			padding: 10px 5px;			
 		}
 		
 		.grid .column {
+			display: flex;
 			flex: 1;
+			flex-direction: column;
+			flex-basis: 100%;
 		}
 
 		.grid .column:last-child {
@@ -78,15 +82,15 @@ function acl_get_wlmopts( $atts, $content ) {
 	</style>
 	
 	<div class="grid">
+		<div class="row">
 			<div class="column"><p class="item">Full Name</p></div>
 			<div class="column "><p class="item">LU Email</p></div>
 			<div class="column "><p class="item">Gender</p></div>
 			<div class="column "><p class="item">Faculty</p></div>
 			<div class="column "><p class="item">Department</p></div>
 			<div class="column "><p class="item">Dissertation Defence</p></div>
-			<div class="column "><p class="item">Approve</p></div>';
-
-
+			<div class="column "><p class="item">Approve</p></div>
+		</div> <!-- row -->';
 /*	foreach ( $approvids as $k => $v ) {
 		$approvmem = wlmapi_get_member($v);		 
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
@@ -113,7 +117,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column "><p class="item">$memdata->custom_dis_defence</p></div>
 			<div class="column "><p class="item">chk</p></div>';
 	}*/
-		echo '</div>';
+		echo '</div> <!-- grid -->';
 	$output = ob_get_contents();
 	ob_end_clean();
 	echo $output;
