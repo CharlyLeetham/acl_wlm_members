@@ -83,31 +83,34 @@ function acl_get_wlmopts( $atts, $content ) {
 	  <div class="column header"><p class="item">Faculty</p></div>
 	  <div class="column header"><p class="item">Department</p></div>
 	  <div class="column header"><p class="item">Dissertation Defence</p></div>
-	  <div class="column header"><p class="item">Approve</p></div>
-	</div>';
+	  <div class="column header"><p class="item">Approve</p></div>';
+
 	
 	foreach ( $approvids as $k => $v ) {
 		$approvmem = wlmapi_get_member($v);		 
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
-
-		echo 'Name: '. $user_info->first_name .' ' .$user_info->last_name.'<br />';		 	 
-		echo 'User Email: '.$approvmem['member'][0]['UserInfo']['user_email'].'<br />';
 		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
-		if ( $memdata->custom_department !== 'Other' ) {
-		echo 'Department: '.$memdata->custom_department.'<br />';
-		} else {
-			echo 'Other Department: '.$memdata->custom_other_dept.'<br />';
-		}
-		
+		echo ' 
+		<div class="column"><p class="item">'$user_info->first_name .' ' .$user_info->last_name.'</p></div>
+		<div class="column header"><p class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</p></div>
+		<div class="column header"><p class="item">'.$memdata->custom_gender.'</p></div>
+		<div class="column header"><p class="item">';
 		if ( $memdata->custom_faculty !== 'Other' ) {
-			echo 'Faculty: '.$memdata->custom_faculty.'<br />';
+			echo $memdata->custom_faculty;
+		else {
+			echo $memdata->custom_other_faculty;
+		echo '</p></div>
+		<div class="column header"><p class="item">';
+				if ( $memdata->custom_department !== 'Other' ) {
+			echo $memdata->custom_department;
 		} else {
-			echo 'Other Faculty: '.$memdata->custom_other_faculty.'<br />';
+			echo $memdata->custom_other_dept;
 		}
-		echo 'Dissertation Defence: '.$memdata->custom_dis_defence.'<br />';
-		echo 'Gender: '.$memdata->custom_gender.'<br />';
+		echo '</p></div>
+		<div class="column header"><p class="item">$memdata->custom_dis_defence</p></div>
+		<div class="column header"><p class="item">chk</p></div>';
 	}
-	
+	echo '</div>';
 	$output = ob_get_contents();
 	ob_end_clean();
 	echo $output;
