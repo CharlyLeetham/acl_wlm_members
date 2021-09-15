@@ -57,7 +57,13 @@ function acl_get_wlmopts( $atts, $content ) {
 		}
 		
 		.grid .header {
-			flex: 1 auto;
+			flex: 1;
+			background-color: #779ccd;
+			text-align: center;
+		}
+
+		.grid .header:last-child {
+			flex: -1;
 			background-color: #779ccd;
 			text-align: center;
 		}
@@ -71,10 +77,13 @@ function acl_get_wlmopts( $atts, $content ) {
 	</style>
 	
 	<div class="grid">
-	  <div class="column header"><p class="item">1</p></div>
-	  <div class="column header"><p class="item">2</p></div>
-	  <div class="column header"><p class="item">3</p></div>
-	  <div class="column header"><p class="item">4</p></div>
+	  <div class="column header"><p class="item">Full Name</p></div>
+	  <div class="column header"><p class="item">LU Email</p></div>
+	  <div class="column header"><p class="item">Gender</p></div>
+	  <div class="column header"><p class="item">Faculty</p></div>
+	  <div class="column header"><p class="item">Department</p></div>
+	  <div class="column header"><p class="item">Dissertation Defence</p></div>
+	  <div class="column header"><p class="item">Approve</p></div>
 	</div>';
 	
 	foreach ( $approvids as $k => $v ) {
