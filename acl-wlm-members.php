@@ -113,7 +113,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			echo '</p></div>
 			<div class="column "><p class="item">$memdata->custom_dis_defence</p></div>
 			<div class="column "><p class="item">chk</p></div>';
-		echo '</div>'
+		echo '</div>';
 	}
 	echo '</div>';
 	$output = ob_get_contents();
