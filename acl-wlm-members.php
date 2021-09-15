@@ -48,8 +48,7 @@ function acl_get_wlmopts( $atts, $content ) {
 	<style>
 		.grid {
 			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
+			flex-flow: row wrap;
 		}
 		
 		.grid > * {
@@ -85,8 +84,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column "><p class="item">Faculty</p></div>
 			<div class="column "><p class="item">Department</p></div>
 			<div class="column "><p class="item">Dissertation Defence</p></div>
-			<div class="column "><p class="item">Approve</p></div>
-		</div>';
+			<div class="column "><p class="item">Approve</p></div>';
 
 
 	foreach ( $approvids as $k => $v ) {
@@ -94,7 +92,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
 		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
 		echo ' 
-		<div class="row">		
+	
 			<div class="column "><p class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</p></div>
 			<div class="column "><p class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</p></div>
 			<div class="column "><p class="item">'.$memdata->custom_gender.'</p></div>
@@ -114,7 +112,6 @@ function acl_get_wlmopts( $atts, $content ) {
 			echo '</p></div>
 			<div class="column "><p class="item">$memdata->custom_dis_defence</p></div>
 			<div class="column "><p class="item">chk</p></div>';
-		echo '</div>';
 	}
 	echo '</div>';
 	$output = ob_get_contents();
