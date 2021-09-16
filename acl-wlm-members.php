@@ -59,6 +59,18 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex-direction: column;
 		}
 		
+		.name {
+			flex: 0.75 0 0;
+		}
+		
+		.details {
+			flex: 3 0px;
+		}
+		
+		.approve {
+			flex: 0.75 0 0;
+		}
+		
 		.header {
 			background-color: #779ccd;
 			text-align: center;	
@@ -100,9 +112,9 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 	<div class="grid">
 		<header class="header">
-			<div class="column"><div class="item">Full Name</div></div>
-			<div class="column "><div class="item">Details</div></div>
-			<div class="column "><div class="item">Approve</div></div>
+			<div class="column name"><div class="item">Full Name</div></div>
+			<div class="column details"><div class="item">Details</div></div>
+			<div class="column approve"><div class="item">Approve</div></div>
 		</header> <!-- row -->
 		<article class="main">
 			<div class="row">Email address</div>
