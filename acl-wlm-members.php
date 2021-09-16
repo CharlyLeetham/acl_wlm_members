@@ -195,13 +195,8 @@ function acl_get_wlmopts( $atts, $content ) {
 				flex-basis: auto;
 			  }
 			}
-	</style>
-	<div id="wrapper">
-	  <div id="a">a</div>
-	  <div id="b">b</div>
-	  <div id="c">c</div>
-	  <div id="d">d</div>
-	</div>';
+	</style>';
+
 
 	$output = ob_get_contents();
 	ob_end_clean();
