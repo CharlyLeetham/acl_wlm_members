@@ -168,6 +168,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			}
 			.newwrapper>* {
 				flex: 1 1 80px;
+				text-align:	center;
 			}
 			
 	</style>
