@@ -109,7 +109,6 @@ function acl_get_wlmopts( $atts, $content ) {
 		</article>
 		<aside class="aside aside-1"><div class="item">Full Name</div></aside>
 		<aside class="aside aside-2"><div class="item">Approve</div></aside>
-		<aside class="aside aside-2"><div class="item">Approve</div></aside>
 	</div>';
 
 	
