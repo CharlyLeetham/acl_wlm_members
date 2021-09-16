@@ -166,20 +166,11 @@ function acl_get_wlmopts( $atts, $content ) {
 			  flex-wrap: wrap;
 			  margin: 10px auto;
 			}
-			
-			.rowwrapper {
-				display: flex;
-				flex-direction: row;
-				flex-wrap: wrap;
+			.newwrapper>* {
+				flex: 1 1 80px;
 			}
 			
-			.rowwrapper .row {
-				flex: 0.25 0 0;
-				display: flex;
-				flex-flow: row wrap;
-			}
-
-			.rowwrapper .row.a {
+		<!--			.rowwrapper .row.a {
 				flex-grow: 1;
 				height: 100%;
 				flex-basis: 50%;
@@ -187,7 +178,7 @@ function acl_get_wlmopts( $atts, $content ) {
 				display: flex;
 				flex-flow: row wrap;			  
 			}
-		<!--	@media screen and (min-width: 640px) {
+	@media screen and (min-width: 640px) {
 			  .a {
 				height: auto;
 				flex-grow: none;
@@ -197,12 +188,10 @@ function acl_get_wlmopts( $atts, $content ) {
 	</style>
 	
 	<div class="newwrapper">
-		<div class="rowwrapper">
 		  <div class="a row">a</div>
 		  <div class="b row">b</div>
 		  <div class="c row">c</div>
 		  <div class="d row">d</div>
-		 </div>
 	</div>';
 
 
