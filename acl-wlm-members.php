@@ -175,54 +175,64 @@ function acl_get_wlmopts( $atts, $content ) {
 	</style>
 		<ul class="listing">
 		  <li>
-			<h2>Item One</h2>
+			<h2>Full name</h2>
 			<div class="body">
 			  <p>The content of this listing item goes here.</p>
-			</div>
-			<div class="cta">
-			  <a href="">Call to action!</a>
-			</div>
-		  </li>
-		  <li>
-			<h2>Item Two</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-			<div class="cta">
-			  <a href="">Call to action!</a>
 			</div>
 		  </li>
 		  <li class="wide">
-			<h2>Item Three</h2>
+			<h2>Details</h2>
 			<div class="body">
 			  <p>The content of this listing item goes here.</p>
-			  <p>This one has more text than the other items.</p>
-			  <p>Quite a lot more</p>
-			  <p>Perhaps we could do something different with it?</p>
-			</div>
-			<div class="cta">
-			  <a href="">Call to action!</a>
 			</div>
 		  </li>
 		  <li>
-			<h2>Item Four</h2>
+			<h2>Approve</h2>
 			<div class="body">
 			  <p>The content of this listing item goes here.</p>
-			</div>
-			<div class="cta">
-			  <a href="">Call to action!</a>
-			</div>
-		  </li>
-		  <li>
-			<h2>Item Five</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-			<div class="cta">
-			  <a href="">Call to action!</a>
 			</div>
 		  </li>
 		</ul>
+		<ul class="listing">
+		  <li>
+			<h2>Full name</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+		  </li>
+		  <li class="wide">
+			<h2>Details</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+		  </li>
+		  <li>
+			<h2>Approve</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+		  </li>
+		</ul>
+		<ul class="listing">
+		  <li>
+			<h2>Full name</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+		  </li>
+		  <li class="wide">
+			<h2>Details</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+		  </li>
+		  <li>
+			<h2>Approve</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+		  </li>
+		</ul>		
 	';
 	
 
