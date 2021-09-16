@@ -73,13 +73,13 @@ function acl_get_wlmopts( $atts, $content ) {
 		.column.name {
 			flex-grow: 1;
 			height: 100%;
-			flex-basis: 50%;
+			flex-basis: 30%;
 		}
 
 		.column.approve {
 			flex-grow: 1;
 			height: 100%;
-			flex-basis: 50%;
+			flex-basis: 30%;
 		}
 
 		.grid .column:last-child {
