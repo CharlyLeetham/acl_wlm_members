@@ -157,35 +157,40 @@ function acl_get_wlmopts( $atts, $content ) {
 	// };
 	// echo '</div>';
 	
+	echo '
 	
-	echo '<style>
-			.newwrapper {
-			  border: 1px solid grey;
-			  display: flex;
-			  flex-wrap: wrap;
-			  flex-direction: column;
-			  margin: 10px auto;
-			  width: 80%;
-			}
-			.newwrapper>* {
-				flex: 1 1 80px;
-				text-align:	center;
-			}
-			
+	<style>
+	
+		.boxwrapper {
+			display: grid;
+			grid-template-columns: repeat(12, [col-start] 1fr);
+			gap: 20px;
+		}
+		
+		.boxwrapper > * {
+			grid-column: col-start / span 12;
+		}	
+
 	</style>
+	<div class="boxwrapper">
+	  <header class="main-head">The header</header>
+	  <nav class="main-nav">
+		<ul>
+		  <li><a href="">Nav 1</a></li>
+		  <li><a href="">Nav 2</a></li>
+		  <li><a href="">Nav 3</a></li>
+		</ul>
+	  </nav>
+	  <article class="content">
+		<h1>Main article area</h1>
+		<p>In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go to a two column layout, and then to a three column layout by redefining the grid, and the placement of items on the grid.</p>
+	  </article>
+	  <aside class="side">Sidebar</aside>
+	  <div class="ad">Advertising</div>
+	  <footer class="main-footer">The footer</footer>
+	</div>
+	';
 	
-	<div class="newwrapper">
-        <div>One</div>
-        <div>Two</div>
-        <div>Three</div>
-        <div>Four</div>
-        <div>Five</div>
-        <div>Six</div>
-        <div>Seven</div>
-        <div>Eight</div>
-        <div>Nine</div>
-        <div>Ten</div>
-	</div>';
 
 
 
