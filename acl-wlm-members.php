@@ -66,7 +66,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		.header {
 			background-color: #779ccd;
 			text-align: center;	
-			 display: flex;
+			display: flex;
 			flex-flow: row wrap;
 			width: 100%;
 			padding: 10px 5px;
@@ -85,7 +85,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		}
 		
 		.main { 
-			flex: 3 0px;
+			/*flex: 3 0px;*/
 		}
 		
 		  .aside-1 { order: 1; } 
