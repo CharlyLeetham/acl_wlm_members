@@ -116,87 +116,46 @@ function acl_get_wlmopts( $atts, $content ) {
 		<aside class="aside aside-1"><div class="item">Full Name</div></aside>
 		<aside class="aside aside-2"><div class="item">Approve</div></aside>
 	</div>';
-
 	
-	echo '
-	<style>
-	
-		.gridnew {
-			margin: 15px;
-		}
-		
-		.row {
-			display: flex;
-			flex-flow: row wrap;	
-			width: 100%;
-			padding: 10px 5px;
-			text-align: center;
-		}
-		
-		.gridnew .row.header {
-			background-color: #779ccd;
-			text-align: center;		
-		}
-		
-		.gridnew .column {
-			display: flex;
-			flex: 1;
-			flex-direction: column;
-		}
-
-		.gridnew .column:last-child {
-			flex: 0;
-		}
-		
-		.gridnew .header .item {
-			color: #ffffff;
-			font-weight: bold;
-			margin: 0;
-		}
-	</style>
-	
-	<div class="gridnew">
-		<div class="row header">
-			<div class="column"><div class="item">Full Name</div></div>
-			<div class="column "><div class="item">LU Email</div></div>
-			<div class="column "><div class="item">Gender</div></div>
-			<div class="column "><div class="item">Faculty</div></div>
-			<div class="column "><div class="item">Department</div></div>
-			<div class="column "><div class="item">Dissertation Defence</div></div>
-			<div class="column "><div class="item">Approve</div></div>
-		</div> <!-- row -->
-	</div> <!-- grid -->';		
 	foreach ( $approvids as $k => $v ) {
 		$approvmem = wlmapi_get_member($v);		 
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
 		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
 		echo ' 
-		<div class="row">
-			<div class="column "><p class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</p></div>
-			<div class="column "><p class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</p></div>
-			<div class="column "><p class="item">'.$memdata->custom_gender.'</p></div>
-			<div class="column "><p class="item">';
-			if ( $memdata->custom_faculty !== 'Other' ) {
-				echo $memdata->custom_faculty;
-			} else {
-				echo $memdata->custom_other_faculty;
-			}
-			echo '</p></div>
-			<div class="column "><p class="item">';
-			if ( $memdata->custom_department !== 'Other' ) {
-				echo $memdata->custom_department;
-			} else {
-				echo $memdata->custom_other_dept;
-			}
-			echo '</p></div>
-			<div class="column "><p class="item">'.$memdata->custom_dis_defence.'</p></div>
+		<article class="main">
+			<div class="row">			
+				<div class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</div>
+			</div>
+			<div class="row">
+				<div class="item">'.$memdata->custom_gender.'</div>
+			</div>
+			<div class="row">			
+				<div class="item">';
+					if ( $memdata->custom_faculty !== 'Other' ) {
+						echo $memdata->custom_faculty;
+					} else {
+						echo $memdata->custom_other_faculty;
+					}
+				echo '</div>
+			</div>
+			<div class="row">			
+				<div class="item">';
+					if ( $memdata->custom_department !== 'Other' ) {
+						echo $memdata->custom_department;
+					} else {
+						echo $memdata->custom_other_dept;
+					}
+				echo '</div>
+				<div class="item">'.$memdata->custom_dis_defence.'</div>				
+			</div>
+		</article>
+		<aside class="aside aside-1">
+			<div class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</div>	
+		</aside>
+		<aside class="aside aside-2"?
 			<div class="column "><p class="item">chk</p></div>
-		</div>';
-	}
-	
-	
-	
-	
+		</aside>
+	}';
 
 	$output = ob_get_contents();
 	ob_end_clean();
