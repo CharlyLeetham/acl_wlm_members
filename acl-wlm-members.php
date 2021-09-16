@@ -166,24 +166,12 @@ function acl_get_wlmopts( $atts, $content ) {
 		  margin: 2em;
 		  display: grid;
 		  gap: 20px;
+		  grid-auto-flow: dense;
 		  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
 		}
-		
-		.listing li {
-		  border: 1px solid #ffe066;
-		  border-radius: 5px;
-		  display: flex;
-		  flex-direction: column;
+		.listing .wide {
+		  grid-column-end: span 2;
 		}
-		.listing .cta {
-		  margin-top: auto;
-		  border-top: 1px solid #ffe066;
-		  padding: 10px;
-		  text-align: center;
-		}
-		.listing .body {
-		  padding: 10px;
-		}		
 	</style>
 		<ul class="listing">
 		  <li>
