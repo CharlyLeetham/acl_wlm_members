@@ -158,7 +158,7 @@ function acl_get_wlmopts( $atts, $content ) {
 	// echo '</div>';
 	
 	
-	/*echo '<style>
+	echo '<style>
 			.newwrapper {
 			  border: 1px solid grey;
 			  display: flex;
@@ -192,7 +192,7 @@ function acl_get_wlmopts( $atts, $content ) {
 	  <div class="c">c</div>
 	  <div class="d">d</div>
 	</div>';
-	*/
+
 
 
 
