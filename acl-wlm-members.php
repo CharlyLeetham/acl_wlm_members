@@ -59,15 +59,15 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex-direction: column;
 		}
 		
-		.name {
+		.column.name {
 			flex: 0.75 0 0;
 		}
 		
-		.details {
+		.column.details {
 			flex: 3 0px;
 		}
 		
-		.approve {
+		.column.approve {
 			flex: 0.75 0 0;
 		}
 		
