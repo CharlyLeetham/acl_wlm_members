@@ -170,28 +170,19 @@ function acl_get_wlmopts( $atts, $content ) {
 				flex: 1 1 80px;
 			}
 			
-		<!--			.rowwrapper .row.a {
-				flex-grow: 1;
-				height: 100%;
-				flex-basis: 50%;
-				flex: 0.25 0 0;
-				display: flex;
-				flex-flow: row wrap;			  
-			}
-	@media screen and (min-width: 640px) {
-			  .a {
-				height: auto;
-				flex-grow: none;
-				flex-basis: auto;
-			  }
-			} -->
 	</style>
 	
 	<div class="newwrapper">
-		  <div class="a row">a</div>
-		  <div class="b row">b</div>
-		  <div class="c row">c</div>
-		  <div class="d row">d</div>
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+        <div>Five</div>
+        <div>Six</div>
+        <div>Seven</div>
+        <div>Eight</div>
+        <div>Nine</div>
+        <div>Ten</div>
 	</div>';
 
 
