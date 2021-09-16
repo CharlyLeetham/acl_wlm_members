@@ -167,35 +167,7 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 	
 	
-	echo '<style>
-			#wrapper {
-			  height: 100vh;
-			  width: 90vw;
-			  border: 1px solid grey;
-			  display: flex;
-			  flex-direction: column;
-			  flex-wrap: wrap;
-			  margin: 10px auto;
-			}
-			#wrapper div {
-			  flex: 1 0 auto;
-			  border: 1px solid white;
-			  background: lightblue;
-			  text-align: center;
-			}
-			#a {
-			  flex-grow: 1;
-			  height: 100%;
-			  flex-basis: 50%;
-			}
-			@media screen and (min-width: 640px) {
-			  #a {
-				height: auto;
-				flex-grow: none;
-				flex-basis: auto;
-			  }
-			}
-	</style>';
+
 
 
 	$output = ob_get_contents();
