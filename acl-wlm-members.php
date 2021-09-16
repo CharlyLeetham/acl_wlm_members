@@ -65,9 +65,10 @@ function acl_get_wlmopts( $atts, $content ) {
 		}
 		
 		.column {
-			display: flex;
-			flex: 1;
-			flex-direction: column;
+			// display: flex;
+			// flex: 1;
+			// flex-direction: column;
+			flex: 1 0 auto;
 		}
 		
 		.column.name {
