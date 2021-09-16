@@ -53,6 +53,10 @@ function acl_get_wlmopts( $atts, $content ) {
 			text-align: center;
 		}
 		
+		.grid .row {
+			width: 100%;
+		}
+		
 		.grid .column {
 			display: flex;
 			flex-direction: column;
@@ -93,6 +97,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		
 		.aside, .main {
 			padding: 10px 5px;
+			text-align: left;
 		}
 		
 		.aside-1, .name { order: 1; } 
@@ -107,14 +112,14 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column details"><div class="item">Details</div></div>
 			<div class="column approve"><div class="item">Approve</div></div>
 		</header> <!-- row -->
-		<article class="main">
+		<!-- <article class="main">
 			<div class="row"><div class="item">Email address</div></div>
 			<div class="row"><div class="item">Faculty</div></div>
 			<div class="row"><div class="item">Department</div></div>
 			<div class="row"><div class="item">Dissertation Defence</div></div>
 		</article>
 		<aside class="aside aside-1"><div class="item">Full Name</div></aside>
-		<aside class="aside aside-2"><div class="item">Approve</div></aside>';
+		<aside class="aside aside-2"><div class="item">Approve</div></aside> -->';
 
 	
 	foreach ( $approvids as $k => $v ) {
@@ -122,7 +127,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
 		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
 		echo ' 
-		<!-- <article class="main">
+		<article class="main">
 			<div class="row">			
 				<div class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</div>
 			</div>
@@ -154,7 +159,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		</aside>
 		<aside class="aside aside-2"?
 			<div class="column "><p class="item">chk</p></div>
-		</aside>-->';
+		</aside>';
 	};
 	
 	echo '</div>';
