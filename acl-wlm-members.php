@@ -76,6 +76,12 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex-basis: 50%;
 		}
 
+		.column.approve {
+			flex-grow: 1;
+			height: 100%;
+			flex-basis: 50%;
+		}
+
 		.grid .column:last-child {
 			flex: 0;
 		}
@@ -118,7 +124,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			}
 			echo '</p></div>
 			<div class="column "><p class="item">'.$memdata->custom_dis_defence.'</p></div>
-			<div class="column "><p class="item">chk</p></div>
+			<div class="column approve"><p class="item">chk</p></div>
 		</div>';
 	}
 	
