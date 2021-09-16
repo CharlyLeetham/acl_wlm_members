@@ -71,8 +71,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		.main {
 			background: #EE0000;
 			display: flex;
-			flex-flow: row wrap;
-			width: 100%;			
+			flex-flow: row wrap;			
 		}
 		
 		.aside-1 {
