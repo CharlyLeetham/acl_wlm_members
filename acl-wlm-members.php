@@ -53,10 +53,6 @@ function acl_get_wlmopts( $atts, $content ) {
 			text-align: center;
 		}
 		
-		.grid > * {
-			flex: 1 100%;
-		}
-
 		.grid .column {
 			display: flex;
 			flex: 1;
