@@ -164,6 +164,8 @@ function acl_get_wlmopts( $atts, $content ) {
 	};
 	echo '</div>';
 	
+	echo 'jdjdjd';
+	
 	/*echo '<style>
 			.newwrapper {
 			  border: 1px solid grey;
