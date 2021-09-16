@@ -166,31 +166,43 @@ function acl_get_wlmopts( $atts, $content ) {
 			  flex-wrap: wrap;
 			  margin: 10px auto;
 			}
-			.newwrapper div {
-			  flex: 1 0 auto;
-			  border: 1px solid white;
-			  background: lightblue;
-			  text-align: center;
+			
+			.rowwrapper {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
 			}
-			.a {
-			  flex-grow: 1;
-			  height: 100%;
-			  flex-basis: 50%;
+			
+			.rowwrapper .row {
+				flex: 0.25 0 0;
+				display: flex;
+				flex-flow: row wrap;
 			}
-			@media screen and (min-width: 640px) {
+
+			.rowwrapper .row.a {
+				flex-grow: 1;
+				height: 100%;
+				flex-basis: 50%;
+				flex: 0.25 0 0;
+				display: flex;
+				flex-flow: row wrap;			  
+			}
+		<!--	@media screen and (min-width: 640px) {
 			  .a {
 				height: auto;
 				flex-grow: none;
 				flex-basis: auto;
 			  }
-			}
+			} -->
 	</style>
 	
 	<div class="newwrapper">
-	  <div class="a">a</div>
-	  <div class="b">b</div>
-	  <div class="c">c</div>
-	  <div class="d">d</div>
+		<div class="rowwrapper">
+		  <div class="a row">a</div>
+		  <div class="b row">b</div>
+		  <div class="c row">c</div>
+		  <div class="d row">d</div>
+		 </div>
 	</div>';
 
 
