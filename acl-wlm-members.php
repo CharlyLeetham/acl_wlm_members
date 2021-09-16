@@ -169,7 +169,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			color: #ffffff;
 		}
 		
-		.listing {
+		.listing, .headerlisting {
 		  list-style: none;
 		  margin: 2em;
 		  display: grid;
@@ -177,6 +177,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		  grid-auto-flow: dense;
 		  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
 		}
+		
 		.listing .wide {
 		  grid-column-end: span 3;
 		}
