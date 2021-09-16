@@ -127,7 +127,6 @@ function acl_get_wlmopts( $atts, $content ) {
 		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
 		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
 		echo ' 
-		<div class="row">
 		<article class="main">
 			<div class="row">			
 				<div class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</div>
@@ -161,7 +160,6 @@ function acl_get_wlmopts( $atts, $content ) {
 		<aside class="aside aside-2"?
 			<div class="column "><p class="item">chk</p></div>
 		</aside>
-		</div>
 		';
 	};
 	
