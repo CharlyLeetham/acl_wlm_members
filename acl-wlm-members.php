@@ -161,83 +161,80 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 	<style>
 	
-		.boxwrapper {
-			display: grid;
-			grid-template-columns: repeat(12, [col-start] 1fr);
-			gap: 20px;
+		.listing {
+		  list-style: none;
+		  margin: 2em;
+		  display: grid;
+		  gap: 20px;
+		  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
 		}
 		
-		.boxwrapper > * {
-			grid-column: col-start / span 12;
+		.listing li {
+		  border: 1px solid #ffe066;
+		  border-radius: 5px;
+		  display: flex;
+		  flex-direction: column;
 		}
-
-		@media (min-width: 500px) {
-		  .side {
-			grid-column: col-start / span 3;
-			grid-row: 3;
-		  }
-		  .ad {
-			grid-column: col-start / span 3;
-			grid-row: 4;
-		  }
-		  .content, .main-footer {
-			grid-column: col-start 4 / span 9;
-		  }
-		  nav ul {
-			display: flex;
-			justify-content: space-between;
-		  }
+		.listing .cta {
+		  margin-top: auto;
+		  border-top: 1px solid #ffe066;
+		  padding: 10px;
+		  text-align: center;
+		}
+		.listing .body {
+		  padding: 10px;
 		}		
-
-		@media (min-width: 700px) {
-		  .boxwrapper .main-nav {
-			grid-column: col-start / span 2;
-			grid-row: 2 / 4;
-		  }
-		  .boxwrapper .content {
-			grid-column: col-start 3 / span 8;
-			grid-row: 2 / 4;
-		  }
-		  .boxwrapper .side {
-			grid-column: col-start 11 / span 2;
-			grid-row: 2;
-		  }
-		  .boxwrapper .ad {
-			grid-column: col-start 11 / span 2;
-			grid-row: 3;
-		  }
-		  .boxwrapper .main-footer {
-			grid-column: col-start / span 12;
-		  }
-		  .boxwrapper nav ul {
-			flex-direction: column;
-		  }
-		}
 	</style>
-	<div class="boxwrapper">
-	  <header class="main-head">The header</header>
-	  <nav class="main-nav">
-		<ul>
-		  <li><a href="">Nav 1</a></li>
-		  <li><a href="">Nav 2</a></li>
-		  <li><a href="">Nav 3</a></li>
+		<ul class="listing">
+		  <li>
+			<h2>Item One</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+			<div class="cta">
+			  <a href="">Call to action!</a>
+			</div>
+		  </li>
+		  <li>
+			<h2>Item Two</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+			<div class="cta">
+			  <a href="">Call to action!</a>
+			</div>
+		  </li>
+		  <li class="wide">
+			<h2>Item Three</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			  <p>This one has more text than the other items.</p>
+			  <p>Quite a lot more</p>
+			  <p>Perhaps we could do something different with it?</p>
+			</div>
+			<div class="cta">
+			  <a href="">Call to action!</a>
+			</div>
+		  </li>
+		  <li>
+			<h2>Item Four</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+			<div class="cta">
+			  <a href="">Call to action!</a>
+			</div>
+		  </li>
+		  <li>
+			<h2>Item Five</h2>
+			<div class="body">
+			  <p>The content of this listing item goes here.</p>
+			</div>
+			<div class="cta">
+			  <a href="">Call to action!</a>
+			</div>
+		  </li>
 		</ul>
-	  </nav>
-	  <article class="content">
-		<h1>Main article area</h1>
-		<p>In this layout, we display the areas in source order for any screen less that 500 pixels wide. We go to a two column layout, and then to a three column layout by redefining the grid, and the placement of items on the grid.</p>
-	  </article>
-	  <aside class="side">Sidebar</aside>
-	  <div class="ad">Advertising</div>
-	  
-	  <article class="content">
-		<h1>Main article area2</h1>
-		<p>In this layout, we dddddisplay the areas in source order for any screen less that 500 pixels wide. We go to a two column layout, and then to a three column layout by redefining the grid, and the placement of items on the grid.</p>
-	  </article>
-	  <aside class="side">Sidebar2</aside>
-	  <div class="ad">Advertising444</div>	  
-	  <footer class="main-footer">The footer</footer>
-	</div>
 	';
 	
 
