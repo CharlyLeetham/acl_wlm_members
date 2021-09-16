@@ -167,8 +167,6 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 	echo '<style>
 			#newwrapper {
-			  height: 100vh;
-			  width: 90vw;
 			  border: 1px solid grey;
 			  display: flex;
 			  flex-direction: column;
