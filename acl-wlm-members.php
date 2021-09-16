@@ -190,26 +190,26 @@ function acl_get_wlmopts( $atts, $content ) {
 		}		
 
 		@media (min-width: 700px) {
-		  .main-nav {
+		  .boxwrapper .main-nav {
 			grid-column: col-start / span 2;
 			grid-row: 2 / 4;
 		  }
-		  .content {
+		  .boxwrapper .content {
 			grid-column: col-start 3 / span 8;
 			grid-row: 2 / 4;
 		  }
-		  .side {
+		  .boxwrapper .side {
 			grid-column: col-start 11 / span 2;
 			grid-row: 2;
 		  }
-		  .ad {
+		  .boxwrapper .ad {
 			grid-column: col-start 11 / span 2;
 			grid-row: 3;
 		  }
-		  .main-footer {
+		  .boxwrapper .main-footer {
 			grid-column: col-start / span 12;
 		  }
-		  nav ul {
+		  .boxwrapper nav ul {
 			flex-direction: column;
 		  }
 		}
