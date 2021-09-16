@@ -105,10 +105,10 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column "><div class="item">Approve</div></div>
 		</header> <!-- row -->
 		<article class="main">
-			<div class="row">Email address</div>
-			<div class="row">Faculty</div>
-			<div class="row">Department</div>
-			<div class="row">Dissertation Defence</div>
+			<div class="column">Email address</div>
+			<div class="column">Faculty</div>
+			<div class="column">Department</div>
+			<div class="column">Dissertation Defence</div>
 		</article>
 		<aside class="aside aside-1">Full Name</aside>
 		<aside class="aside aside-2">Approve</aside>
