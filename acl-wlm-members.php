@@ -53,6 +53,84 @@ function acl_get_wlmopts( $atts, $content ) {
 		
 		.row {
 			display: flex;
+			flex-flow: column wrap;	
+			width: 100%;
+			padding: 10px 5px;
+			text-align: center;
+		}
+		
+		.grid .row.header {
+			background-color: #779ccd;
+			text-align: center;		
+		}
+		
+		.column {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+		}
+		
+		.column.name {
+			flex-grow: 1;
+			height: 100%;
+			flex-basis: 50%;
+		}
+
+		.grid .column:last-child {
+			flex: 0;
+		}
+		
+		.grid .header .item {
+			color: #ffffff;
+			font-weight: bold;
+			margin: 0;
+		}
+	</style>
+	
+	<div class="grid">
+		<div class="row header">
+			<div class="column"><div class="item">Full Name</div></div>
+			<div class="column "><div class="item">Details</div></div>
+			<div class="column "><div class="item">Approve</div></div>
+		</div> <!-- row -->
+	</div> <!-- grid -->';		
+	foreach ( $approvids as $k => $v ) {
+		$approvmem = wlmapi_get_member($v);		 
+		$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
+		$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
+		echo ' 
+		<div class="row">
+			<div class="column name"><p class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</p></div>
+			<div class="column "><p class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</p></div>
+			<div class="column "><p class="item">'.$memdata->custom_gender.'</p></div>
+			<div class="column "><p class="item">';
+			if ( $memdata->custom_faculty !== 'Other' ) {
+				echo $memdata->custom_faculty;
+			} else {
+				echo $memdata->custom_other_faculty;
+			}
+			echo '</p></div>
+			<div class="column "><p class="item">';
+			if ( $memdata->custom_department !== 'Other' ) {
+				echo $memdata->custom_department;
+			} else {
+				echo $memdata->custom_other_dept;
+			}
+			echo '</p></div>
+			<div class="column "><p class="item">'.$memdata->custom_dis_defence.'</p></div>
+			<div class="column "><p class="item">chk</p></div>
+		</div>';
+	}
+	
+	echo '
+	<style>
+	
+		.grid {
+			margin: 15px;
+		}
+		
+		.row {
+			display: flex;
 			flex-flow: row wrap;	
 			width: 100%;
 			padding: 10px 5px;
@@ -119,6 +197,10 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column "><p class="item">chk</p></div>
 		</div>';
 	}
+	
+	
+	
+	
 
 	$output = ob_get_contents();
 	ob_end_clean();
