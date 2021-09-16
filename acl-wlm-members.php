@@ -195,7 +195,7 @@ function acl_get_wlmopts( $atts, $content ) {
 				flex-basis: auto;
 			  }
 			}
-	echo "</style">
+	</style>
 	<div id="wrapper">
 	  <div id="a">a</div>
 	  <div id="b">b</div>
