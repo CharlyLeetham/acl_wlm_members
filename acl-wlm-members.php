@@ -163,6 +163,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			  border: 1px solid grey;
 			  display: flex;
 			  flex-wrap: wrap;
+			  flex-direction: column;
 			  margin: 10px auto;
 			  width: 80%;
 			}
