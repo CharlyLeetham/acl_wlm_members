@@ -57,6 +57,12 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex: 1 100%;
 		}
 
+		.grid .oolumn {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+		}
+		
 		.header {
 			background-color: #779ccd;
 			text-align: center;		
