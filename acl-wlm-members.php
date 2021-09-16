@@ -76,7 +76,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		.aside-1, .name {
 			display: flex;
 			flex-flow: row wrap;
-			flex: 0.75 0 0		
+			flex: 1 0 0		
 		}
 
 		.aside-2, .approve {
