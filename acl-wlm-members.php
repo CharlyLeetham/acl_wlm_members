@@ -89,6 +89,10 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex: 3 0px;
 		}
 		
+		.aside, .details {
+			padding: 10px 5px;
+		}
+		
 		.aside-1, .name { order: 1; } 
 		.main, .details    { order: 2; }
 		.aside-2, .approve { order: 3; }		
