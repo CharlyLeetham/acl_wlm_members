@@ -57,7 +57,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex: 1 100%;
 		}
 
-		.grid .oolumn {
+		.grid .column {
 			display: flex;
 			flex: 1;
 			flex-direction: column;
