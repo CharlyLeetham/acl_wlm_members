@@ -111,16 +111,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="column name"><div class="item">Full Name</div></div>
 			<div class="column details"><div class="item">Details</div></div>
 			<div class="column approve"><div class="item">Approve</div></div>
-		</div> <!-- row -->
-		<!-- <article class="main">
-			<div class="row"><div class="item">Email address</div></div>
-			<div class="row"><div class="item">Faculty</div></div>
-			<div class="row"><div class="item">Department</div></div>
-			<div class="row"><div class="item">Dissertation Defence</div></div>
-		</article>
-		<div class="aside aside-1"><div class="item">Full Name</div></div>
-		<div class="aside aside-2"><div class="item">Approve</div></div> -->';
-
+		</div> <!-- row -->';
 	
 	foreach ( $approvids as $k => $v ) {
 		$approvmem = wlmapi_get_member($v);		 
@@ -155,7 +146,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="row">
 				<div class="item">'.$memdata->custom_dis_defence.'</div>				
 			</div>
-		</div>
+		</div> <!-- /main -->
 		<div class="aside aside-1">
 			<div class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</div>	
 		</div>
