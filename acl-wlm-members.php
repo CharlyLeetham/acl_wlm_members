@@ -55,22 +55,10 @@ function acl_get_wlmopts( $atts, $content ) {
 		
 		.grid .column {
 			display: flex;
-			flex: 1;
 			flex-direction: column;
 		}
 		
-		.column.name {
-			flex: 0.75 0 0;
-		}
-		
-		.column.details {
-			flex: 3 0px;
-		}
-		
-		.column.approve {
-			flex: 0.75 0 0;
-		}
-		
+
 		.header {
 			background-color: #779ccd;
 			text-align: center;	
@@ -86,27 +74,27 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex-flow: row wrap;			
 		}
 		
-		.aside-1 {
+		.aside-1, .name {
 			background: #110000;
 			display: flex;
 			flex-flow: row wrap;
 			flex: 0.75 0 0		
 		}
 
-		.aside-2 {
+		.aside-2, .approve {
 			background: #990000;
 			display: flex;
 			flex-flow: row wrap;
 			flex: 0.25 0 0;		
 		}
 		
-		.main { 
+		.main, .details { 
 			flex: 3 0px;
 		}
 		
-		  .aside-1 { order: 1; } 
-		  .main    { order: 2; }
-		  .aside-2 { order: 3; }		
+		.aside-1, .name { order: 1; } 
+		.main, .details    { order: 2; }
+		.aside-2, .approve { order: 3; }		
 		
 	</style>
 	
