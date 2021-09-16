@@ -151,6 +151,8 @@ function acl_get_wlmopts( $atts, $content ) {
 						echo $memdata->custom_other_dept;
 					}
 				echo '</div>
+			</div>
+			<div class="row">
 				<div class="item">'.$memdata->custom_dis_defence.'</div>				
 			</div>
 		</div>
@@ -158,11 +160,11 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</div>	
 		</div>
 		<div class="aside aside-2"?
-			<div class="column "><p class="item">chk</p></div>
+			<div class="item">chk</div>
 		</div>
 		';
 	};
-	echo '</div>';
+	// echo '</div>';
 	
 	echo 'jdjdjd';
 	
