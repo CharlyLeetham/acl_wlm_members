@@ -132,7 +132,7 @@ function acl_get_wlmopts( $atts, $content ) {
 	echo '
 	<style>
 	
-		.grid {
+		.gridnew {
 			margin: 15px;
 		}
 		
@@ -144,29 +144,29 @@ function acl_get_wlmopts( $atts, $content ) {
 			text-align: center;
 		}
 		
-		.grid .row.header {
+		.gridnew .row.header {
 			background-color: #779ccd;
 			text-align: center;		
 		}
 		
-		.column {
+		.gridnew .column {
 			display: flex;
 			flex: 1;
 			flex-direction: column;
 		}
 
-		.grid .column:last-child {
+		.gridnew .column:last-child {
 			flex: 0;
 		}
 		
-		.grid .header .item {
+		.gridnew .header .item {
 			color: #ffffff;
 			font-weight: bold;
 			margin: 0;
 		}
 	</style>
 	
-	<div class="grid">
+	<div class="gridnew">
 		<div class="row header">
 			<div class="column"><div class="item">Full Name</div></div>
 			<div class="column "><div class="item">LU Email</div></div>
