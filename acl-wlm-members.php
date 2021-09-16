@@ -66,6 +66,8 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex-flow: row wrap;
 			width: 100%;
 			padding: 10px 5px;
+			font-weight: bold;
+			color: #ffffff;
 		}
 
 		.main, .details {
@@ -89,7 +91,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			flex: 3 0px;
 		}
 		
-		.aside, .details {
+		.aside, .main {
 			padding: 10px 5px;
 		}
 		
