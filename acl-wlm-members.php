@@ -68,21 +68,18 @@ function acl_get_wlmopts( $atts, $content ) {
 			padding: 10px 5px;
 		}
 
-		.main {
-			background: #EE0000;
+		.main, .details {
 			display: flex;
 			flex-flow: row wrap;			
 		}
 		
 		.aside-1, .name {
-			background: #110000;
 			display: flex;
 			flex-flow: row wrap;
 			flex: 0.75 0 0		
 		}
 
 		.aside-2, .approve {
-			background: #990000;
 			display: flex;
 			flex-flow: row wrap;
 			flex: 0.25 0 0;		
