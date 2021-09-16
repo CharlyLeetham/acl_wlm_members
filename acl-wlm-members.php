@@ -161,6 +161,14 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 	<style>
 	
+		.headerlisting {
+			background-color: #779ccd;
+			text-align: center;	
+			padding: 10px 5px;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		
 		.listing {
 		  list-style: none;
 		  margin: 2em;
@@ -170,9 +178,20 @@ function acl_get_wlmopts( $atts, $content ) {
 		  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
 		}
 		.listing .wide {
-		  grid-column-end: span 2;
+		  grid-column-end: span 3;
 		}
 	</style>
+		<ul class="headerlisting">
+		  <li>
+			<h2>Full name</h2>
+		  </li>
+		  <li class="wide">
+			<h2>Details</h2>
+		  </li>
+		  <li>
+			<h2>Approve</h2>
+		  </li>
+		</ul>	
 		<ul class="listing">
 		  <li>
 			<h2>Full name</h2>
