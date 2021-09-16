@@ -164,6 +164,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			  display: flex;
 			  flex-wrap: wrap;
 			  margin: 10px auto;
+			  width: 80%;
 			}
 			.newwrapper>* {
 				flex: 1 1 80px;
