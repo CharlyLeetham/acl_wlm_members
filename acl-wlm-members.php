@@ -169,8 +169,50 @@ function acl_get_wlmopts( $atts, $content ) {
 		
 		.boxwrapper > * {
 			grid-column: col-start / span 12;
-		}	
+		}
 
+		@media (min-width: 500px) {
+		  .side {
+			grid-column: col-start / span 3;
+			grid-row: 3;
+		  }
+		  .ad {
+			grid-column: col-start / span 3;
+			grid-row: 4;
+		  }
+		  .content, .main-footer {
+			grid-column: col-start 4 / span 9;
+		  }
+		  nav ul {
+			display: flex;
+			justify-content: space-between;
+		  }
+		}		
+
+		@media (min-width: 700px) {
+		  .main-nav {
+			grid-column: col-start / span 2;
+			grid-row: 2 / 4;
+		  }
+		  .content {
+			grid-column: col-start 3 / span 8;
+			grid-row: 2 / 4;
+		  }
+		  .side {
+			grid-column: col-start 11 / span 2;
+			grid-row: 2;
+		  }
+		  .ad {
+			grid-column: col-start 11 / span 2;
+			grid-row: 3;
+		  }
+		  .main-footer {
+			grid-column: col-start / span 12;
+		  }
+		  nav ul {
+			flex-direction: column;
+		  }
+		}
 	</style>
 	<div class="boxwrapper">
 	  <header class="main-head">The header</header>
