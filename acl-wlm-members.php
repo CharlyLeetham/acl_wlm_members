@@ -154,8 +154,8 @@ function acl_get_wlmopts( $atts, $content ) {
 		</aside>
 		<aside class="aside aside-2"?
 			<div class="column "><p class="item">chk</p></div>
-		</aside>
-	}';
+		</aside>';
+	};
 
 	$output = ob_get_contents();
 	ob_end_clean();
