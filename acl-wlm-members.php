@@ -210,8 +210,8 @@ function acl_get_wlmopts( $atts, $content ) {
 				</div>			
 				<div>
 				
-				<span class="rowhd">Email: </span>'.$approvmem['member'][0]['UserInfo']['user_email'].'<br />'
-					.$memdata->custom_gender.'<br />
+				<span class="rowhd">Email: </span>'.$approvmem['member'][0]['UserInfo']['user_email'].'<br />
+					Gender: '.$memdata->custom_gender.'<br />
 					<span class="rowhd">Faculty: </span>';
 					if ( $memdata->custom_faculty !== 'Other' ) {
 							echo $memdata->custom_faculty;
