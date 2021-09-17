@@ -20,6 +20,14 @@ function acl_get_wlmopts( $atts, $content ) {
 		var_dump ($_POST);
 		foreach ($_POST['member'] as $k=>$v) {
 			echo 'Member ID: '.$v.'<br />';
+			
+			// wishlistmember_approve_user_levels (action)
+			// Called when a member is approved on one or more levels
+			// Parameters:
+			// $id – Member ID
+			// $levels – Membership Levels
+			
+			
 		}
 	} else {
 	
@@ -145,6 +153,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="footerlisting">
 			  <div class="wide">
 					<input type="submit" name="submit" class="button-primary" value="Approve Selected Members" />
+					 <input type="hidden" id="levelid" name="levelid" value="'.$allowed.'">
 			  </div>
 
 			</div>';		
