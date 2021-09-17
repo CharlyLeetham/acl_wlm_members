@@ -189,7 +189,46 @@ function acl_get_wlmopts( $atts, $content ) {
 		  <div>
 			<h2>Approve</h2>
 		  </div>
-		</div>	
+		</div>';
+		foreach ( $approvids as $k => $v ) {
+			$approvmem = wlmapi_get_member($v);		 
+			$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
+			$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
+			echo ' 			
+			<div class="listing">
+				<div>
+					'.$user_info->first_name .' ' .$user_info->last_name.'
+				</div>			
+				<div>'
+					.$approvmem['member'][0]['UserInfo']['user_email'].'<br />'
+					.$memdata->custom_gender.'<br />
+					Faculty: ';
+					if ( $memdata->custom_faculty !== 'Other' ) {
+							echo $memdata->custom_faculty;
+					} else {
+							echo $memdata->custom_other_faculty;
+					}
+					echo '<br />
+					Department: ';
+					if ( $memdata->custom_department !== 'Other' ) {
+						echo $memdata->custom_department;
+					} else {
+						echo $memdata->custom_other_dept;
+					}
+					echo '<br />
+					Dissertation Defence: '.$memdata->custom_dis_defence.'<br />
+				</div> 
+				<div>
+					chk
+				</div>
+			</div> <!-- listing -->
+			';
+		};
+
+
+
+
+		
 		<div class="listing">
 		  <div>
 			<h2>divl name</h2>
