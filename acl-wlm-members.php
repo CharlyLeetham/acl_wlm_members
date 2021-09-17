@@ -175,11 +175,11 @@ function acl_get_wlmopts( $atts, $content ) {
 		  display: grid;
 		  gap: 20px;
 		  grid-auto-flow: dense;
-		  grid-template-columns: repeat(auto-fill,minmax(4, 1fr));
+		  grid-template-columns: 20% 1fr 10%
 		}
 		
 		.listing .wide, .headerlisting .wide {
-		  grid-column-end: span 2;
+		  /*grid-column-end: span 2;*/
 		}
 		
 	</style>
