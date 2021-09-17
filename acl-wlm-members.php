@@ -183,6 +183,10 @@ function acl_get_wlmopts( $atts, $content ) {
 			border-bottom: 1px dotted #779ccd;
 		}
 		
+		.rowhd {
+			font-weight bold;
+		}
+		
 	</style>
 		<div class="headerlisting">
 		  <div>
