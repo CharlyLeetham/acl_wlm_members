@@ -35,6 +35,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		$members = wlmapi_the_level_members(1631561301); // Feed the membership level ID in as as shortcode att.
 		$memmore = $members['members']['member'];  //Get the member details based on the Membership level ID.
 		$allowed  = [1631561301];	// this is the Membership level we're looking for. This will need to be fed in as a shortcode att.
+		$levelid = 1631561301;
 		
 		foreach ( $memmore as $k=>$v ) { //Cycle through the members and get their ID's. $memmore only has the basic user details for the members in the level. We need to get more.
 			$levels = wlmapi_get_member_levels($v['id']); //Using the member ID, get the membership level details. We're going to use this information to find those that need approval. 
@@ -153,7 +154,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			<div class="footerlisting">
 			  <div class="wide">
 					<input type="submit" name="submit" class="button-primary" value="Approve Selected Members" />
-					 <input type="hidden" id="levelid" name="levelid" value="'.$allowed.'">
+					 <input type="hidden" id="levelid" name="levelid" value="'.$levelid.'">
 			  </div>
 
 			</div>';		
