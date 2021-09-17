@@ -18,6 +18,7 @@ class acl_wlm_members {
 		
 		if(isset($_POST["submit"])){  //If the submit button has been clicked, this runs.
 			$output ='';
+			$message = '';
 			
 			// We're going to change members from "For Approval to Pending. That's done using this array			
 			$args = array(
