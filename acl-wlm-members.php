@@ -30,26 +30,26 @@ class acl_wlm_members {
 				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
 				$message .= 'Member ID: '.$v.' ( ';
 				if ( $user_info->first_name ) {
-					echo $user_info -> first_name;
+					$message .= $user_info -> first_name;
 				}
 				
 				if ( $user_info->first_name && $user_info->last_name ){
-					echo ' ';
+					$message .= ' ';
 				}
 				
 				if ( $user_info->last_name ) {
-					echo $user_info->last_name;
+					$message .=  $user_info->last_name;
 				}
 				
 				if ( ($user_info->first_name || $user_info->last_name) && $user_info->user_email ) {
-					echo ' - ';
+					$message .=  ' - ';
 				}
 				
 				if ( $user_info->user_email ) {
-					echo $user_info->user_email;
+					$message .=  $user_info->user_email;
 				}
 				
-				echo ') approved.<br />';
+				$message .=  ') approved.<br />';
 			}
 			
 			echo $message;
