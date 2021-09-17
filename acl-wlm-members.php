@@ -2,7 +2,7 @@
 /*
 Plugin Name: ACL WLM List Members In Level
 Plugin URI: http://askcharlyleetham.com
-Description: Shortcode query WLM and return details of members.
+Description: Shortcode query WLM and return details of members. Set up a list of For Approval members and then approve them to the level. 
 Version: 1
 Author: Charly Dwyer
 Author URI: http://askcharlyleetham.com
