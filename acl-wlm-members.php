@@ -21,7 +21,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		echo '<br />';
 		foreach ($_POST['member'] as $k=>$v) {
 			echo 'Member ID: '.$v.'<br />';
-			echo 'wishlistmember_approve_user_levels ('.$v'.,.'$levelid')<br />';
+			echo 'wishlistmember_approve_user_levels ('.$v.','.$levelid.')<br />';
 			// wishlistmember_approve_user_levels (action)
 			// Called when a member is approved on one or more levels
 			// Parameters:
