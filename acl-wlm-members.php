@@ -181,7 +181,7 @@ function acl_get_wlmopts( $atts, $content ) {
 	</style>
 		<div class="headerlisting">
 		  <div>
-			<h2>Fdivl name</h2>
+			<h2>Full name</h2>
 		  </div>
 		  <div>
 			<h2>Details</h2>
@@ -190,63 +190,63 @@ function acl_get_wlmopts( $atts, $content ) {
 			<h2>Approve</h2>
 		  </div>
 		</div>	
-		<div class="divsting">
+		<div class="listing">
 		  <div>
-			<h2>Fdivl name</h2>
+			<h2>divl name</h2>
 			<div class="body">
-			  <p>The content of this divsting item goes here.</p>
+			  <p>The content of this listing item goes here.</p>
 			</div>
 		  </div>
 		  <div class="wide">
 			<h2>Details</h2>
 			<div class="body">
-			  <p>The content of this divsting item goes here.</p>
+			  <p>The content of this listing item goes here.</p>
 			</div>
 		  </div>
 		  <div>
 			<h2>Approve</h2>
 			<div class="body">
-			  <p>The content of this divsting item goes here.</p>
+			  <p>The content of this listing item goes here.</p>
 			</div>
 		  </div>
 		</div>
-		<div class="divsting">
+		<div class="listing">
 		  <div>
-			<h2>Fdivl name</h2>
+			<h2>Full name</h2>
 			<div class="body">
-			  <p>The content of this divsting item goes here.</p>
+			  <p>The content of this listing item goes here.</p>
 			</div>
 		  </div>
 		  <div class="wide">
 			<h2>Details</h2>
 			<div class="body">
-			  <p>The content of this divsting item goes here.</p>
+			  <p>The content of this listing item goes here.</p>
 			</div>
 		  </div>
 		  <div>
 			<h2>Approve</h2>
 			<div class="body">
-			  <p>The content of this divsting item goes here.</p>
+			  <p>The content of this listing item goes here.</p>
 			</div>
 		  </div>
 		</div>
-		<div class="divsting">
+		<div class="listing">
 		  <div>
-			<h2>Fdivl name</h2>
+			<h2>Full name</h2>
 			<div class="body">
-			  <p>The content of this divsting item goes here.</p>
+			  <p>The content of this listing item goes here.</p>
 			</div>
 		  </div>
 		  <div class="wide">
 			<h2>Details</h2>
 			<div class="body">
-			  <p>The content of this divsting item goes here.</p>
+			  <p>The content of this listing item goes here.</p>
 			</div>
 		  </div>
 		  <div>
 			<h2>Approve</h2>
 			<div class="body">
-			  <p>The content of this divsting item goes here.</p>
+			  <p>The content of this listing item goes here.</p>
 			</div>
 		  </div>
 		</div>		
