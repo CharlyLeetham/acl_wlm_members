@@ -190,13 +190,13 @@ function acl_get_wlmopts( $atts, $content ) {
 	</style>
 		<div class="headerlisting">
 		  <div>
-			<h2>Full name</h2>
+			<span class="rowhd">Full name</span>
 		  </div>
 		  <div>
-			<h2>Details</h2>
+			<span class="rowhd">Details</span>
 		  </div>
 		  <div>
-			<h2>Approve</h2>
+			<span class="rowhd">Approve</span>
 		  </div>
 		</div>';
 		foreach ( $approvids as $k => $v ) {
