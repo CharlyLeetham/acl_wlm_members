@@ -19,14 +19,12 @@ function acl_get_wlmopts( $atts, $content ) {
 	if(isset($_POST["submit"])){
 		var_dump ($_POST);
 		echo '<br />';
+		$args = array(
+			  'Pending' => false
+		 );		
 		foreach ($_POST['member'] as $k=>$v) {
 			echo 'Member ID: '.$v.'<br />';
-			echo 'wishlistmember_approve_user_levels ('.$v.','.$_POST['levelid'].')<br />';
-			// wishlistmember_approve_user_levels (action)
-			// Called when a member is approved on one or more levels
-			// Parameters:
-			// $id – Member ID
-			// $levels – Membership Levels
+			echo 'wlmapi_update_level_member_data('.$_POST['levelid'].', '.$v. ','. $args.')';
 			
 			
 		}
