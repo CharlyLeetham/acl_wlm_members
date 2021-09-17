@@ -224,10 +224,7 @@ function acl_get_wlmopts( $atts, $content ) {
 			</div> <!-- listing -->
 			';
 		};
-
-
-
-
+echo '
 		
 		<div class="listing">
 		  <div>
@@ -291,9 +288,6 @@ function acl_get_wlmopts( $atts, $content ) {
 		</div>		
 	';
 	
-
-
-
 
 	$output = ob_get_contents();
 	ob_end_clean();
