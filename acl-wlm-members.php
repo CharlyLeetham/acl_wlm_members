@@ -197,26 +197,27 @@ function acl_get_wlmopts( $atts, $content ) {
 			echo ' 			
 			<div class="listing">
 				<div>
-					'.$user_info->first_name .' ' .$user_info->last_name.'
+					<span class="rowhd">'.$user_info->first_name .' ' .$user_info->last_name.'</span>
 				</div>			
-				<div>'
-					.$approvmem['member'][0]['UserInfo']['user_email'].'<br />'
+				<div>
+				
+				<span class="rowhd">Email: </span>'.$approvmem['member'][0]['UserInfo']['user_email'].'<br />'
 					.$memdata->custom_gender.'<br />
-					Faculty: ';
+					<span class="rowhd">Faculty: </span>';
 					if ( $memdata->custom_faculty !== 'Other' ) {
 							echo $memdata->custom_faculty;
 					} else {
 							echo $memdata->custom_other_faculty;
 					}
 					echo '<br />
-					Department: ';
+					<span class="rowhd">Department: </span>';
 					if ( $memdata->custom_department !== 'Other' ) {
 						echo $memdata->custom_department;
 					} else {
 						echo $memdata->custom_other_dept;
 					}
 					echo '<br />
-					Dissertation Defence: '.$memdata->custom_dis_defence.'<br />
+					<span class="rowhd">Dissertation Defence: </span>'.$memdata->custom_dis_defence.'<br />
 				</div> 
 				<div>
 					chk
@@ -224,70 +225,6 @@ function acl_get_wlmopts( $atts, $content ) {
 			</div> <!-- listing -->
 			';
 		};
-echo '
-		
-		<div class="listing">
-		  <div>
-			<h2>divl name</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </div>
-		  <div class="wide">
-			<h2>Details</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </div>
-		  <div>
-			<h2>Approve</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </div>
-		</div>
-		<div class="listing">
-		  <div>
-			<h2>Full name</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </div>
-		  <div class="wide">
-			<h2>Details</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </div>
-		  <div>
-			<h2>Approve</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </div>
-		</div>
-		<div class="listing">
-		  <div>
-			<h2>Full name</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </div>
-		  <div class="wide">
-			<h2>Details</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </div>
-		  <div>
-			<h2>Approve</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </div>
-		</div>		
-	';
-	
 
 	$output = ob_get_contents();
 	ob_end_clean();
