@@ -28,7 +28,28 @@ class acl_wlm_members {
 			foreach ($_POST['member'] as $k=>$v) {
 				$output .= wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
 				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
-				$message .= 'Member ID: '.$v.' ( '.$user_info->first_name .' ' .$user_info->last_name .') approved.<br />';
+				$message .= 'Member ID: '.$v.' ( ';
+				if ( $user_info->first_name )
+					echo $user_info -> first_name;
+				}
+				
+				if ( $user_info->first_name && $user_info->last_name ){
+					echo ' ';
+				}
+				
+				if ( $user_info->last_name ) {
+					echo $user_info->last_name;
+				}
+				
+				if ( ($user_info->first_name || $user_info->last_name) && $user_info->email ) {
+					echo ' - ';
+				}
+				
+				if ( $user_info->email ) {
+					echo $user_info->email;
+				}
+				
+				echo ') approved.<br />';
 			}
 			
 			echo $message;
