@@ -131,7 +131,7 @@ function acl_get_wlmopts( $atts, $content ) {
 						<span class="rowhd">Dissertation Defence: </span>'.$memdata->custom_dis_defence.'<br />
 					</div> 
 					<div class="approve">
-						<input type="checkbox" id="'.$v.'" name="'.$v.'" value="'.$v.'">
+						<input type="checkbox" id="'.$v.'" name="member" value="'.$v.'">
 					</div>
 				</div> <!-- listing -->
 				';
