@@ -19,15 +19,18 @@ function acl_get_wlmopts( $atts, $content ) {
 	if(isset($_POST["submit"])){
 		var_dump ($_POST);
 		echo '<br />';
+		$output ='';
 		$args = array(
 			  'Pending' => false
 		 );		
 		foreach ($_POST['member'] as $k=>$v) {
-			echo 'Member ID: '.$v.'<br />';
-			echo 'wlmapi_update_level_member_data('.$_POST['levelid'].', '.$v. ','. $args.')';
-			
-			
+			// echo 'Member ID: '.$v.'<br />';
+			// echo 'wlmapi_update_level_member_data('.$_POST['levelid'].', '.$v. ','. $args.')';
+			$output .= wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
 		}
+		
+		var_dump ($output);
+		echo '<br />'		
 	} else {
 	
 		$i = 0;
