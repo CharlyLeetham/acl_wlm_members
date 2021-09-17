@@ -101,6 +101,7 @@ function acl_get_wlmopts( $atts, $content ) {
 				<span class="rowhd">Approve</span>
 			  </div>
 			</div>';
+			$memkey = 0;
 			foreach ( $approvids as $k => $v ) {
 				$approvmem = wlmapi_get_member($v);		 
 				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
@@ -131,10 +132,11 @@ function acl_get_wlmopts( $atts, $content ) {
 						<span class="rowhd">Dissertation Defence: </span>'.$memdata->custom_dis_defence.'<br />
 					</div> 
 					<div class="approve">
-						<input type="checkbox" id="'.$v.'" name="member['.$v.']" value="'.$v.'">
+						<input type="checkbox" id="'.$v.'" name="member['.$memkey.']" value="'.$v.'">
 					</div>
 				</div> <!-- listing -->
 				';
+				$memkey++;
 			};
 			echo '
 			<div class="footerlisting">
