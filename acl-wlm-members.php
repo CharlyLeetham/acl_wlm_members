@@ -184,7 +184,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		}
 		
 		.rowhd {
-			font-weight bold;
+			font-weight: bold;
 		}
 		
 	</style>
