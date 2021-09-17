@@ -193,34 +193,6 @@ class acl_wlm_members {
 			echo $output;
 		}
 	}
-
-
-
-	function acl_listwlmopts( $atts,$content ) {
-		extract(shortcode_atts(array(
-					'inclevelid' => '',
-					'inclevelname' => '',
-					'exclevelid' => '',
-					'exclevelname' => '',
-					'messagetodisplay' => '',
-		), $atts));
-
-			$inclevelname = explode(',',$inclevelname);
-			$inclevelid = explode(',',$inclevelid);
-			$exclevelid = explode(',',$exclevelid);
-			$exclevelname = explode(',',$exclevelname);
-
-		$returnvalue=$this->twpw_getwlmlevel_tags($inclevelid,$inclevelname,$exclevelid,$exclevelname,$messagetodisplay,$content);
-
-		if (is_array($returnvalue)) {
-			return $returnvalue;
-		} elseif ($returnvalue == ' ') {
-			return;
-		} else {
-			return $returnvalue;
-		}
-	}
-
 }
 
 if ( !isset ($acl_wlm_members) ){
@@ -228,7 +200,6 @@ if ( !isset ($acl_wlm_members) ){
 	$acl_wlm_members = new acl_wlm_members;
 }
 
-add_shortcode ( 'acl_listwlmopts', array( &$acl_wlm_members, 'acl_listwlmopts' ) );
 add_shortcode ( 'acl_wlmoptprint', array( &$acl_wlm_members, 'acl_get_wlmopts' ) );	
 
 ?>
