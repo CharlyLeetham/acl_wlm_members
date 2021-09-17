@@ -45,120 +45,6 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 	ob_start();
 	echo '
-	<!--  <style>
-	
-		.grid {
-			display: flex;
-			flex-flow: row wrap;
-			text-align: center;
-		}
-		
-		.grid .row {
-			width: 100%;
-		}
-		
-		.grid .column {
-			display: flex;
-			flex-direction: column;
-		}
-		
-
-		.header {
-			background-color: #779ccd;
-			text-align: center;	
-			display: flex;
-			flex-flow: row wrap;
-			width: 100%;
-			padding: 10px 5px;
-			font-weight: bold;
-			color: #ffffff;
-		}
-
-		.main, .details {
-			display: flex;
-			flex-flow: row wrap;			
-		}
-		
-		.aside-1, .name {
-			display: flex;
-			flex-flow: row wrap;
-			flex: 1 0 0		
-		}
-
-		.aside-2, .approve {
-			display: flex;
-			flex-flow: row wrap;
-			flex: 0.25 0 0;		
-		}
-		
-		.main, .details { 
-			flex: 3 0px;
-		}
-		
-		.aside, .main {
-			padding: 10px 5px;
-			text-align: left;
-		}
-		
-		.aside-1, .name { order: 1; } 
-		.main, .details    { order: 2; }
-		.aside-2, .approve { order: 3; }		
-		
-	</style>
-	
-	<div class="grid">
-		<div class="header">
-			<div class="column name"><div class="item">Full Name</div></div>
-			<div class="column details"><div class="item">Details</div></div>
-			<div class="column approve"><div class="item">Approve</div></div>
-		</div> --> <!-- row --> ';
-	
-	// foreach ( $approvids as $k => $v ) {
-		// $approvmem = wlmapi_get_member($v);		 
-		// $user_info = get_userdata($v); // Get the user info so we can get First and Last Name
-		// $memdata = $approvmem['member'][0]['UserInfo']['wldata'];
-		// echo ' 
-		// <div class="main">
-			// <div class="row">			
-				// <div class="item">'.$approvmem['member'][0]['UserInfo']['user_email'].'</div>
-			// </div>
-			// <div class="row">
-				// <div class="item">'.$memdata->custom_gender.'</div>
-			// </div>
-			// <div class="row">			
-				// <div class="item">';
-					// if ( $memdata->custom_faculty !== 'Other' ) {
-						// echo $memdata->custom_faculty;
-					// } else {
-						// echo $memdata->custom_other_faculty;
-					// }
-				// echo '</div>
-			// </div>
-			// <div class="row">			
-				// <div class="item">';
-					// if ( $memdata->custom_department !== 'Other' ) {
-						// echo $memdata->custom_department;
-					// } else {
-						// echo $memdata->custom_other_dept;
-					// }
-				// echo '</div>
-			// </div>
-			// <div class="row">
-				// <div class="item">'.$memdata->custom_dis_defence.'</div>				
-			// </div>
-		// </div> <!-- /main -->
-		// <div class="aside aside-1">
-			// <div class="item">'.$user_info->first_name .' ' .$user_info->last_name.'</div>	
-		// </div>
-		// <div class="aside aside-2"?
-			// <div class="item">chk</div>
-		// </div>
-		// ';
-	// };
-	// echo '</div>';
-	
-	echo '
-	
 	<style>
 	
 		.headerlisting {
@@ -190,8 +76,13 @@ function acl_get_wlmopts( $atts, $content ) {
 		.listing .approve {
 			text-align: center;
 		}
+
+		.footerlisting .wide {
+			grid-column-end: span 3;
+		}
 		
 	</style>
+	<form method="post">
 		<div class="headerlisting">
 		  <div>
 			<span class="rowhd">Full name</span>
@@ -238,6 +129,13 @@ function acl_get_wlmopts( $atts, $content ) {
 			</div> <!-- listing -->
 			';
 		};
+		echo '
+		<div class="footerlisting">
+		  <div class="wide">
+				<input type="submit" name="submit" class="button-primary" value="'._e('Save General Options') .'" />
+		  </div>
+
+		</div>';		
 
 	$output = ob_get_contents();
 	ob_end_clean();
