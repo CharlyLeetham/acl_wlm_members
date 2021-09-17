@@ -18,6 +18,9 @@ function acl_get_wlmopts( $atts, $content ) {
 	
 	if(isset($_POST["submit"])){
 		var_dump ($_POST);
+		foreach ($_POST['member'] as $k=>$v) {
+			echo 'Member ID: '.$v.'<br />';
+		}
 	} else {
 	
 		$i = 0;
