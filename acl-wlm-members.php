@@ -41,12 +41,12 @@ class acl_wlm_members {
 					echo $user_info->last_name;
 				}
 				
-				if ( ($user_info->first_name || $user_info->last_name) && $user_info->email ) {
+				if ( ($user_info->first_name || $user_info->last_name) && $user_info->user_email ) {
 					echo ' - ';
 				}
 				
-				if ( $user_info->email ) {
-					echo $user_info->email;
+				if ( $user_info->user_email ) {
+					echo $user_info->user_email;
 				}
 				
 				echo ') approved.<br />';
