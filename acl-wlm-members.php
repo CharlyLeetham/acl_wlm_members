@@ -178,6 +178,11 @@ function acl_get_wlmopts( $atts, $content ) {
 		  grid-template-columns: 20% 1fr 10%
 		}
 		
+		.listing {
+			padding: 0px 0px 20px 20px;
+			border-bottom: 1px dotted #779ccd;
+		}
+		
 	</style>
 		<div class="headerlisting">
 		  <div>
