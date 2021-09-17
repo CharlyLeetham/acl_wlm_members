@@ -178,82 +178,78 @@ function acl_get_wlmopts( $atts, $content ) {
 		  grid-template-columns: 20% 1fr 10%
 		}
 		
-		.listing .wide, .headerlisting .wide {
-		  /*grid-column-end: span 2;*/
-		}
-		
 	</style>
-		<ul class="headerlisting">
-		  <li>
-			<h2>Full name</h2>
-		  </li>
-		  <li class="wide">
+		<div class="headerlisting">
+		  <div>
+			<h2>Fdivl name</h2>
+		  </div>
+		  <div>
 			<h2>Details</h2>
-		  </li>
-		  <li>
+		  </div>
+		  <div>
 			<h2>Approve</h2>
-		  </li>
-		</ul>	
-		<ul class="listing">
-		  <li>
-			<h2>Full name</h2>
+		  </div>
+		</div>	
+		<div class="divsting">
+		  <div>
+			<h2>Fdivl name</h2>
 			<div class="body">
-			  <p>The content of this listing item goes here.</p>
+			  <p>The content of this divsting item goes here.</p>
 			</div>
-		  </li>
-		  <li class="wide">
-			<h2>Details</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </li>
-		  <li>
-			<h2>Approve</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </li>
-		</ul>
-		<ul class="listing">
-		  <li>
-			<h2>Full name</h2>
-			<div class="body">
-			  <p>The content of this listing item goes here.</p>
-			</div>
-		  </li>
-		  <li class="wide">
+		  </div>
+		  <div class="wide">
 			<h2>Details</h2>
 			<div class="body">
-			  <p>The content of this listing item goes here.</p>
+			  <p>The content of this divsting item goes here.</p>
 			</div>
-		  </li>
-		  <li>
+		  </div>
+		  <div>
 			<h2>Approve</h2>
 			<div class="body">
-			  <p>The content of this listing item goes here.</p>
+			  <p>The content of this divsting item goes here.</p>
 			</div>
-		  </li>
-		</ul>
-		<ul class="listing">
-		  <li>
-			<h2>Full name</h2>
+		  </div>
+		</div>
+		<div class="divsting">
+		  <div>
+			<h2>Fdivl name</h2>
 			<div class="body">
-			  <p>The content of this listing item goes here.</p>
+			  <p>The content of this divsting item goes here.</p>
 			</div>
-		  </li>
-		  <li class="wide">
+		  </div>
+		  <div class="wide">
 			<h2>Details</h2>
 			<div class="body">
-			  <p>The content of this listing item goes here.</p>
+			  <p>The content of this divsting item goes here.</p>
 			</div>
-		  </li>
-		  <li>
+		  </div>
+		  <div>
 			<h2>Approve</h2>
 			<div class="body">
-			  <p>The content of this listing item goes here.</p>
+			  <p>The content of this divsting item goes here.</p>
 			</div>
-		  </li>
-		</ul>		
+		  </div>
+		</div>
+		<div class="divsting">
+		  <div>
+			<h2>Fdivl name</h2>
+			<div class="body">
+			  <p>The content of this divsting item goes here.</p>
+			</div>
+		  </div>
+		  <div class="wide">
+			<h2>Details</h2>
+			<div class="body">
+			  <p>The content of this divsting item goes here.</p>
+			</div>
+		  </div>
+		  <div>
+			<h2>Approve</h2>
+			<div class="body">
+			  <p>The content of this divsting item goes here.</p>
+			</div>
+		  </div>
+		</div>		
 	';
 	
 
