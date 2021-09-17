@@ -29,7 +29,7 @@ class acl_wlm_members {
 				$output .= wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
 				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
 				$message .= 'Member ID: '.$v.' ( ';
-				if ( $user_info->first_name )
+				if ( $user_info->first_name ) {
 					echo $user_info -> first_name;
 				}
 				
