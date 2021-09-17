@@ -14,24 +14,24 @@ Version 1.0 - Original Version
 
 class acl_wlm_members {
 
-	function acl_get_wlmopts( $atts, $content ) {
+	function acl_get_wlmopts( $atts, $content ) { // This is the function that lists the members to be approved and then approves them.
 		
-		
-		
-		if(isset($_POST["submit"])){
-			var_dump ($_POST);
-			echo '<br />';
+		if(isset($_POST["submit"])){  //If the submit button has been clicked, this runs.
 			$output ='';
+			
+			// We're going to change members from "For Approval to Pending. That's done using this array			
 			$args = array(
 				  'Pending' => false
-			 );		
+			 );	
+
+			//Loop through each member who had the approve button clicked.
 			foreach ($_POST['member'] as $k=>$v) {
-				// echo 'Member ID: '.$v.'<br />';
-				// echo 'wlmapi_update_level_member_data('.$_POST['levelid'].', '.$v. ','. $args.')';
 				$output .= wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
+				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
+				$message .= 'Member ID: '.$v.' ( '.$user_info->first_name .' ' .$user_info->last_name .') approved.<br />';
 			}
 			
-			var_dump ($output);
+			echo $message;
 			echo '<br />';	
 		} else {
 		
@@ -205,4 +205,5 @@ if ( !isset ($acl_wlm_members) ){
 
 add_shortcode ( 'acl_listwlmopts', array( &$acl_wlm_members, 'acl_listwlmopts' ) );
 add_shortcode ( 'acl_wlmoptprint', array( &$acl_wlm_members, 'acl_get_wlmopts' ) );	
+
 ?>
