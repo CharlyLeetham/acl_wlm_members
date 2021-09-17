@@ -171,7 +171,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		
 		.listing, .headerlisting {
 		  list-style: none;
-		  margin: 2em;
+		  margin: 2em 0 1em 1em;
 		  display: grid;
 		  gap: 20px;
 		  grid-auto-flow: dense;
