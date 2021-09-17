@@ -30,7 +30,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		}
 		
 		var_dump ($output);
-		echo '<br />'		
+		echo '<br />';	
 	} else {
 	
 		$i = 0;
