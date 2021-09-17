@@ -132,7 +132,7 @@ function acl_get_wlmopts( $atts, $content ) {
 		echo '
 		<div class="footerlisting">
 		  <div class="wide">
-				<input type="submit" name="submit" class="button-primary" value="'._e('Save General Options') .'" />
+				<input type="submit" name="submit" class="button-primary" value="Approve Selected Members" />
 		  </div>
 
 		</div>';		
