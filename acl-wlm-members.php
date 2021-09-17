@@ -187,6 +187,10 @@ function acl_get_wlmopts( $atts, $content ) {
 			font-weight: bold;
 		}
 		
+		.listing .approve {
+			text-align: center;
+		}
+		
 	</style>
 		<div class="headerlisting">
 		  <div>
@@ -228,7 +232,7 @@ function acl_get_wlmopts( $atts, $content ) {
 					echo '<br />
 					<span class="rowhd">Dissertation Defence: </span>'.$memdata->custom_dis_defence.'<br />
 				</div> 
-				<div>
+				<div class="approve">
 					<input type="checkbox" id="'.$v.'" name="'.$v.'" value="'.$v.'">
 				</div>
 			</div> <!-- listing -->
