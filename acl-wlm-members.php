@@ -127,6 +127,11 @@ class acl_wlm_members {
 
 				.footerlisting .wide {
 					grid-column-end: span 3;
+					text-align: right;
+				}
+				
+				.footerlisting input[type=submit]:hover {
+					background: #70BF45;
 				}
 				
 			</style>
