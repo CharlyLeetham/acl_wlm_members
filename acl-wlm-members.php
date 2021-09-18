@@ -17,7 +17,7 @@ class acl_wlm_members {
 
 	function acl_get_wlmopts( $atts, $content ) { // This is the function that lists the members to be approved and then approves them.
 		
-		if(isset($_POST["submit"])){  //If the submit button has been clicked, this runs.
+		if(isset($_POST["approvebulk"])){  //If the submit button has been clicked, this runs.
 			$result ='';
 			$message = '';
 			
@@ -55,7 +55,22 @@ class acl_wlm_members {
 			}
 			
 			echo $message;
-			echo '<br />';	
+			echo '<br />';
+		} else if ( isset($_POST["submit-approve"]) ) {  // This is the first part of the function to be Ajaxified.
+			// We're going to change members from "For Approval to Pending. That's done using this array			
+			$args = array(
+				  'Pending' => false
+			 );	
+			 
+			$result = wlmapi_update_level_member_data($_POST['levelid'] , $memid , $args);	
+			// We need to get levelid and memberid ($memid) to this function.
+			
+		} else if ( isset($_POST["submit_decline"]) ) {  //This is the second part of the function to be Ajaxified.
+			// The member isn't approved, so they need to be removed from the system in full.
+			
+			$result = wp_delete_user( $memid );
+			// We need to pass the memberid ($memid) to the function
+			
 		} else {
 			
 			$alc_wlm_atts = shortcode_atts( array(
@@ -137,6 +152,8 @@ class acl_wlm_members {
 				}
 				
 			</style>
+			
+			<h3> Old Function </h3>
 			<form method="post">
 				<div class="headerlisting">
 				  <div>
@@ -189,11 +206,78 @@ class acl_wlm_members {
 				echo '
 				<div class="footerlisting">
 				  <div class="wide">
-						<input type="submit" name="submit" class="button-primary" value="Approve Selected Members" />
+						<input type="submit" name="approvebulk" class="button-primary" value="Approve Selected Members" />
 						 <input type="hidden" id="levelid" name="levelid" value="'.$levelid.'">
 				  </div>
 
-				</div>';		
+				</div>
+
+
+			<h3> New Ajax Function </h3>
+			<form method="post">
+				<div class="headerlisting">
+				  <div>
+					<span class="rowhd">Full name</span>
+				  </div>
+				  <div>
+					<span class="rowhd">Details</span>
+				  </div>
+				  <div>
+					<span class="rowhd">Approve</span>
+				  </div>
+				  <div>
+					<span class="rowhd">Decline</span>
+				  </div>
+				</div>';
+				$memkey = 0;
+				foreach ( $approvids as $k => $v ) {
+					$approvmem = wlmapi_get_member($v);		 
+					$user_info = get_userdata($v); // Get the user info so we can get First and Last Name
+					$memdata = $approvmem['member'][0]['UserInfo']['wldata'];
+					echo ' 			
+					<div class="listing">
+						<div>
+							<span class="rowhd">'.$user_info->first_name .' ' .$user_info->last_name.'</span>
+						</div>			
+						<div>
+						
+						<span class="rowhd">Email: </span>'.$approvmem['member'][0]['UserInfo']['user_email'].'<br />
+							<span class="rowhd">Gender: </span>'.$memdata->custom_gender.'<br />
+							<span class="rowhd">Faculty: </span>';
+							if ( $memdata->custom_faculty !== 'Other' ) {
+									echo $memdata->custom_faculty;
+							} else {
+									echo $memdata->custom_other_faculty;
+							}
+							echo '<br />
+							<span class="rowhd">Department: </span>';
+							if ( $memdata->custom_department !== 'Other' ) {
+								echo $memdata->custom_department;
+							} else {
+								echo $memdata->custom_other_dept;
+							}
+							echo '<br />
+							<span class="rowhd">Dissertation Defence: </span>'.$memdata->custom_dis_defence.'<br />
+						</div> 
+						<div class="approve">
+							<input type="submit" name="submit-approve" class="button-primary approve" value="Approve Member" />
+							<!-- We need to pass MemberId: $v and LevelID: $levelid to the function ..... -->
+						</div>
+						<div class="approve">
+							<input type="submit" name="submit-decline" class="button-primary decline" value="Decline Members" />
+							<!-- We need to pass MemberId: $v and LevelID: $levelid to the function ..... -->							
+						</div>
+					</div> <!-- listing -->
+					';
+					$memkey++;
+				};
+				echo '
+				<div class="footerlisting">
+				  <div class="wide">
+						 <input type="hidden" id="levelid" name="levelid" value="'.$levelid.'">
+				  </div>
+
+				</div>';				
 
 			$output = ob_get_contents();
 			ob_end_clean();
