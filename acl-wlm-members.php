@@ -3,13 +3,13 @@
 Plugin Name: ACL WLM List Members In Level
 Plugin URI: http://askcharlyleetham.com
 Description: Shortcode query WLM and return details of members. Set up a list of For Approval members and then approve them to the level. 
-Version: 1
+Version: Ajaxify
 Author: Charly Dwyer
 Author URI: http://askcharlyleetham.com
 License: GPL
 
 Changelog
-Version 1.0 - Original Version
+Version 1.0 Ajaxify - Original Version
 */
 
 class acl_wlm_members {
