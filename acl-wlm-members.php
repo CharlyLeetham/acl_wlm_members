@@ -126,7 +126,7 @@ class acl_wlm_members {
 				  display: grid;
 				  gap: 20px;
 				  grid-auto-flow: dense;
-				  grid-template-columns: 20% 1fr 10%
+				  grid-template-columns: 20% 1fr 10% 10%
 				}
 				
 				.listing {
@@ -142,6 +142,13 @@ class acl_wlm_members {
 					text-align: center;
 				}
 
+				.listing input.button-primary {
+					text-align: center;
+					font-size: 1em;
+					line-break: auto;
+					padding: 2px;
+				}
+				
 				.footerlisting .wide {
 					grid-column-end: span 3;
 					text-align: right;
@@ -150,6 +157,8 @@ class acl_wlm_members {
 				.footerlisting input[type=submit]:hover {
 					background: #70BF45;
 				}
+				
+				.
 				
 			</style>
 			
@@ -260,11 +269,11 @@ class acl_wlm_members {
 							<span class="rowhd">Dissertation Defence: </span>'.$memdata->custom_dis_defence.'<br />
 						</div> 
 						<div class="approve">
-							<input type="submit" name="submit-approve" class="button-primary approve" value="Approve Member" />
+							<input type="submit" name="submit-approve" class="button-primary approve" value="Approve" />
 							<!-- We need to pass MemberId: $v and LevelID: $levelid to the function ..... -->
 						</div>
 						<div class="approve">
-							<input type="submit" name="submit-decline" class="button-primary decline" value="Decline Members" />
+							<input type="submit" name="submit-decline" class="button-primary decline" value="Decline" />
 							<!-- We need to pass MemberId: $v and LevelID: $levelid to the function ..... -->							
 						</div>
 					</div> <!-- listing -->
