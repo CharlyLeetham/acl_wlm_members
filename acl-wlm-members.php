@@ -9,7 +9,8 @@ Author URI: http://askcharlyleetham.com
 License: GPL
 
 Changelog
-Version 1.0 Ajaxify - Original Version
+Version 1.0 - Original Version
+Ajaxify - Make the functions use Ajax
 */
 
 class acl_wlm_members {
@@ -17,7 +18,7 @@ class acl_wlm_members {
 	function acl_get_wlmopts( $atts, $content ) { // This is the function that lists the members to be approved and then approves them.
 		
 		if(isset($_POST["submit"])){  //If the submit button has been clicked, this runs.
-			$output ='';
+			$result ='';
 			$message = '';
 			
 			// We're going to change members from "For Approval to Pending. That's done using this array			
@@ -27,7 +28,7 @@ class acl_wlm_members {
 
 			//Loop through each member who had the approve button clicked.
 			foreach ($_POST['member'] as $k=>$v) {
-				$output .= wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
+				$result = wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
 				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
 				$message .= 'Member ID: '.$v.' (';
 				if ( $user_info->first_name ) {
