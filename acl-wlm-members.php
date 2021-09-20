@@ -11,78 +11,82 @@ License: GPL
 Changelog
 Version 1.0 - Original Version
 Version 1.01 - Add a Decline Function
+Version 1.02 - Put in error checking to stop the output showing on the wp-admin pages.
 */
 
 class acl_wlm_members {
 
 	function acl_get_wlmopts( $atts, $content ) { // This is the function that lists the members to be approved and then approves them.
 		
-		if(isset($_POST["approvebulk"])){  //If the submit button has been clicked, this runs.
-			$result ='';
-			$message = '';
+			if ( is_admin() ) { return; }
+			// This function doesn't need to run in the admin panel.
 			
-			// We're going to change members from "For Approval to Pending. That's done using this array			
-			$args = array(
-				  'Pending' => false
-			 );	
+			if(isset($_POST["approvebulk"])){  //If the submit button has been clicked, this runs.
+				$result ='';
+				$message = '';
+				
+				// We're going to change members from "For Approval to Pending. That's done using this array			
+				$args = array(
+					  'Pending' => false
+				 );	
 
-			//Loop through each member who had the approve button clicked.
-			foreach ($_POST['approvemember'] as $k=>$v) {
-				$result = wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
-				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
-				$message .= 'Member ID: '.$v.' (';
-				if ( $user_info->first_name ) {
-					$message .= $user_info -> first_name;
+				//Loop through each member who had the approve button clicked.
+				foreach ($_POST['approvemember'] as $k=>$v) {
+					$result = wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
+					$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
+					$message .= 'Member ID: '.$v.' (';
+					if ( $user_info->first_name ) {
+						$message .= $user_info -> first_name;
+					}
+					
+					if ( $user_info->first_name && $user_info->last_name ){
+						$message .= ' ';
+					}
+					
+					if ( $user_info->last_name ) {
+						$message .=  $user_info->last_name;
+					}
+					
+					if ( ($user_info->first_name || $user_info->last_name) && $user_info->user_email ) {
+						$message .=  ' - ';
+					}
+					
+					if ( $user_info->user_email ) {
+						$message .=  $user_info->user_email;
+					}
+					
+					$message .=  ') approved.<br />';
 				}
-				
-				if ( $user_info->first_name && $user_info->last_name ){
-					$message .= ' ';
-				}
-				
-				if ( $user_info->last_name ) {
-					$message .=  $user_info->last_name;
-				}
-				
-				if ( ($user_info->first_name || $user_info->last_name) && $user_info->user_email ) {
-					$message .=  ' - ';
-				}
-				
-				if ( $user_info->user_email ) {
-					$message .=  $user_info->user_email;
-				}
-				
-				$message .=  ') approved.<br />';
-			}
 
-			foreach ($_POST['declinemember'] as $k=>$v) {
-				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
-				$message .= 'Member ID: '.$v.' (';
-				if ( $user_info->first_name ) {
-					$message .= $user_info -> first_name;
+				foreach ($_POST['declinemember'] as $k=>$v) {
+					$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
+					$message .= 'Member ID: '.$v.' (';
+					if ( $user_info->first_name ) {
+						$message .= $user_info -> first_name;
+					}
+					
+					if ( $user_info->first_name && $user_info->last_name ){
+						$message .= ' ';
+					}
+					
+					if ( $user_info->last_name ) {
+						$message .=  $user_info->last_name;
+					}
+					
+					if ( ($user_info->first_name || $user_info->last_name) && $user_info->user_email ) {
+						$message .=  ' - ';
+					}
+					
+					if ( $user_info->user_email ) {
+						$message .=  $user_info->user_email;
+					}
+					
+					$message .=  ') declined.<br />';
+					$result = wp_delete_user( $v );
 				}
 				
-				if ( $user_info->first_name && $user_info->last_name ){
-					$message .= ' ';
-				}
-				
-				if ( $user_info->last_name ) {
-					$message .=  $user_info->last_name;
-				}
-				
-				if ( ($user_info->first_name || $user_info->last_name) && $user_info->user_email ) {
-					$message .=  ' - ';
-				}
-				
-				if ( $user_info->user_email ) {
-					$message .=  $user_info->user_email;
-				}
-				
-				$message .=  ') declined.<br />';
-				$result = wp_delete_user( $v );
-			}
-			
-			echo $message;
-			echo '<br />';
+				echo $message;
+				echo '<br />';
 		} else {
 			
 			$alc_wlm_atts = shortcode_atts( array(
