@@ -10,14 +10,15 @@ License: GPL
 
 Changelog
 Version 1.0 - Original Version
+Version 1.01 - Add a Decline Function
 */
 
 class acl_wlm_members {
 
 	function acl_get_wlmopts( $atts, $content ) { // This is the function that lists the members to be approved and then approves them.
 		
-		if(isset($_POST["submit"])){  //If the submit button has been clicked, this runs.
-			$output ='';
+		if(isset($_POST["approvebulk"])){  //If the submit button has been clicked, this runs.
+			$result ='';
 			$message = '';
 			
 			// We're going to change members from "For Approval to Pending. That's done using this array			
@@ -26,8 +27,8 @@ class acl_wlm_members {
 			 );	
 
 			//Loop through each member who had the approve button clicked.
-			foreach ($_POST['member'] as $k=>$v) {
-				$output .= wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
+			foreach ($_POST['approvemember'] as $k=>$v) {
+				$result = wlmapi_update_level_member_data($_POST['levelid'] , $v , $args);
 				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
 				$message .= 'Member ID: '.$v.' (';
 				if ( $user_info->first_name ) {
@@ -52,9 +53,36 @@ class acl_wlm_members {
 				
 				$message .=  ') approved.<br />';
 			}
+
+			foreach ($_POST['declinemember'] as $k=>$v) {
+				$user_info = get_userdata($v); // Get the user info so we can get First and Last Name				
+				$message .= 'Member ID: '.$v.' (';
+				if ( $user_info->first_name ) {
+					$message .= $user_info -> first_name;
+				}
+				
+				if ( $user_info->first_name && $user_info->last_name ){
+					$message .= ' ';
+				}
+				
+				if ( $user_info->last_name ) {
+					$message .=  $user_info->last_name;
+				}
+				
+				if ( ($user_info->first_name || $user_info->last_name) && $user_info->user_email ) {
+					$message .=  ' - ';
+				}
+				
+				if ( $user_info->user_email ) {
+					$message .=  $user_info->user_email;
+				}
+				
+				$message .=  ') declined.<br />';
+				$result = wp_delete_user( $v );
+			}
 			
 			echo $message;
-			echo '<br />';	
+			echo '<br />';
 		} else {
 			
 			$alc_wlm_atts = shortcode_atts( array(
@@ -110,7 +138,7 @@ class acl_wlm_members {
 				  display: grid;
 				  gap: 20px;
 				  grid-auto-flow: dense;
-				  grid-template-columns: 20% 1fr 10%
+				  grid-template-columns: 20% 1fr 10% 10%
 				}
 				
 				.listing {
@@ -126,6 +154,13 @@ class acl_wlm_members {
 					text-align: center;
 				}
 
+				.listing input.button-primary {
+					text-align: center;
+					font-size: 1em;
+					line-break: auto;
+					padding: 2px;
+				}
+				
 				.footerlisting .wide {
 					grid-column-end: span 3;
 					text-align: right;
@@ -135,7 +170,10 @@ class acl_wlm_members {
 					background: #70BF45;
 				}
 				
+				.
+				
 			</style>
+			
 			<form method="post">
 				<div class="headerlisting">
 				  <div>
@@ -146,6 +184,9 @@ class acl_wlm_members {
 				  </div>
 				  <div>
 					<span class="rowhd">Approve</span>
+				  </div>
+				  <div>
+					<span class="rowhd">Decline</span>
 				  </div>
 				</div>';
 				$memkey = 0;
@@ -179,7 +220,10 @@ class acl_wlm_members {
 							<span class="rowhd">Dissertation Defence: </span>'.$memdata->custom_dis_defence.'<br />
 						</div> 
 						<div class="approve">
-							<input type="checkbox" id="'.$v.'" name="member['.$memkey.']" value="'.$v.'">
+							<input type="checkbox" id="'.$v.'" name="approvemember['.$memkey.']" value="'.$v.'">
+						</div>
+						<div class="approve">
+							<input type="checkbox" id="'.$v.'" name="declinemember['.$memkey.']" value="'.$v.'">
 						</div>
 					</div> <!-- listing -->
 					';
@@ -188,11 +232,12 @@ class acl_wlm_members {
 				echo '
 				<div class="footerlisting">
 				  <div class="wide">
-						<input type="submit" name="submit" class="button-primary" value="Approve Selected Members" />
+						<input type="submit" name="approvebulk" class="button-primary" value="Approve / Decline Selected Members" />
 						 <input type="hidden" id="levelid" name="levelid" value="'.$levelid.'">
 				  </div>
 
-				</div>';		
+				</div>
+			</form>';
 
 			$output = ob_get_contents();
 			ob_end_clean();
