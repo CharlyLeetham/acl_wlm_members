@@ -10,6 +10,7 @@ License: GPL
 
 Changelog
 Version 1.0 - Original Version
+Version 1.01 - Adding a decline button
 */
 
 class acl_wlm_members {
