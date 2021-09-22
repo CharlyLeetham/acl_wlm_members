@@ -14,7 +14,16 @@ Ajaxify - Make the functions use Ajax
 */
 
 class acl_wlm_members {
-
+	
+	function acl_incl_js_script() {
+		wp_enqueue_script( 'acl-app-core-script', plugin_dir_url( __FILE__ ) .'/scripts/acl-core-script.js',array() , strtotime("now"), true );
+		$locallize_array = array();
+		$locallize_array['ajax_url'] = admin_url('admin-ajax.php');
+		wp_localize_script('acl-app-core-script', 'aclLocalVars', $locallize_array);
+		
+	}
+	
+	
 	function acl_get_wlmopts( $atts, $content ) { // This is the function that lists the members to be approved and then approves them.
 		
 		if(isset($_POST["approvebulk"])){  //If the submit button has been clicked, this runs.
@@ -268,13 +277,30 @@ class acl_wlm_members {
 							echo '<br />
 							<span class="rowhd">Dissertation Defence: </span>'.$memdata->custom_dis_defence.'<br />
 						</div> 
+						<style>
+							.cta-btns{
+								    text-align: center;
+									font-size: 1em;
+									line-break: auto;
+									padding: 2px;
+									background: #e6e6e6;
+									border: 1px solid #e6e6e6;
+									color: rgba(0,0,0,0.8);
+									line-height: 20px;
+							}
+							.cta-btns:hover{
+								text-decoration: none;
+							}
+						</style>
 						<div class="approve">
-							<input type="submit" name="submit-approve" class="button-primary approve" value="Approve" />
-							<!-- We need to pass MemberId: $v and LevelID: $levelid to the function ..... -->
+							<a class="button-primary approve cta-btns" href="#" data-action="approve" data-level-id="'.$levelid.'" data-user-id="'.$v.'">Approve</a>
+							<!-- <input type="submit" name="submit-approve" class="button-primary approve cta-btns" value="Approve" />
+							We need to pass MemberId: $v and LevelID: $levelid to the function ..... -->
 						</div>
 						<div class="approve">
-							<input type="submit" name="submit-decline" class="button-primary decline" value="Decline" />
-							<!-- We need to pass MemberId: $v and LevelID: $levelid to the function ..... -->							
+							<a class="button-primary decline cta-btns" href="#" data-action="decline" data-level-id="'.$levelid.'" data-user-id="'.$v.'" >Decline</a>
+							<!-- <input type="submit" name="submit-decline" class="button-primary decline" value="Decline" />
+								We need to pass MemberId: $v and LevelID: $levelid to the function ..... -->							
 						</div>
 					</div> <!-- listing -->
 					';
@@ -301,5 +327,10 @@ if ( !isset ($acl_wlm_members) ){
 }
 
 add_shortcode ( 'acl_wlmoptprint', array( &$acl_wlm_members, 'acl_get_wlmopts' ) );	
+add_action( 'wp_enqueue_scripts', array( &$acl_wlm_members, 'acl_incl_js_script' ));
+
+
+/* add_action( 'wp_ajax_acl_wlm_user_action', array( &$acl_wlm_members, 'acl_wlm_user_action'));
+add_action( 'wp_ajax_acl_wlm_user_actiond', array( &$acl_wlm_members, 'acl_wlm_user_action')); */
 
 ?>
