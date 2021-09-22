@@ -23,7 +23,12 @@ class acl_wlm_members {
 		
 	}
 	
-	
+	// ajax user update
+	function acl_wlm_user_action(){
+		
+		echo "Hello World";
+		wp_die();
+	}
 	function acl_get_wlmopts( $atts, $content ) { // This is the function that lists the members to be approved and then approves them.
 		
 		if(isset($_POST["approvebulk"])){  //If the submit button has been clicked, this runs.
@@ -330,7 +335,7 @@ add_shortcode ( 'acl_wlmoptprint', array( &$acl_wlm_members, 'acl_get_wlmopts' )
 add_action( 'wp_enqueue_scripts', array( &$acl_wlm_members, 'acl_incl_js_script' ));
 
 
-/* add_action( 'wp_ajax_acl_wlm_user_action', array( &$acl_wlm_members, 'acl_wlm_user_action'));
-add_action( 'wp_ajax_acl_wlm_user_actiond', array( &$acl_wlm_members, 'acl_wlm_user_action')); */
+add_action( 'wp_ajax_acl_wlm_user_action', array( &$acl_wlm_members, 'acl_wlm_user_action'));
+add_action( 'wp_ajax_acl_wlm_user_actiond', array( &$acl_wlm_members, 'acl_wlm_user_action')); 
 
 ?>
