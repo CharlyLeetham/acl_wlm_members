@@ -1,6 +1,6 @@
  jQuery('.cta-btns').on('click', function(e){
         e.preventDefault();
-        var action = jQuery(this).attr("data-action");
+        var formaction = jQuery(this).attr("data-action");
 		var userID = jQuery(this).attr("data-user-id");
 		var levelID = jQuery(this).attr("data-level-id");
 	
@@ -8,7 +8,7 @@
             type: "post",
             dataType : "html",
             url : aclLocalVars.ajax_url,
-            data : {action: "acl_wlm_user_action"},
+            data : {action: "acl_wlm_user_action", formaction: formaction },
 			success: function(data) {
 				console.log( data );              
             },
