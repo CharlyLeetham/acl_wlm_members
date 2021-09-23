@@ -6,7 +6,7 @@
 
 		var data = {
 			'action': 'acl_wlm_user_action',
-			'whatever': aclLocalVars.ajax_url      // We pass php values differently!
+			'userID' = jQuery(this).attr("data-user-id")
 		};	
 
 			jQuery.post(aclLocalVars.ajax_url, data, function(response) {
