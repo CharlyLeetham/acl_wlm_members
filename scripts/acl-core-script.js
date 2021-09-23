@@ -16,8 +16,7 @@
             type: "POST",
             dataType : "html",
             url : aclLocalVars.ajax_url,
-            data : {action: "acl_wlm_user_action"}
-			
+            data : {action: "acl_wlm_user_action"},
 			success: function(data) {
 				console.log( data );              
             },
