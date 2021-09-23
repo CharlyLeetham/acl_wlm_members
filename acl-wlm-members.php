@@ -19,7 +19,8 @@ class acl_wlm_members {
 		wp_enqueue_script( 'acl-app-core-script', plugin_dir_url( __FILE__ ) .'/scripts/acl-core-script.js',array() , strtotime("now"), true );
 		$locallize_array = array();
 		$locallize_array['ajax_url'] = admin_url('admin-ajax.php');
-		wp_localize_script('acl-app-core-script', 'aclLocalVars', $locallize_array);
+		// wp_localize_script('acl-app-core-script', 'aclLocalVars', $locallize_array);
+		wp_localize_script('acl-app-core-script', 'aclLocalVars', array( 'ajax_url' => admin_url( 'admin-ajax.php' ));
 		// wp_localize_script('acl-app-core-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'we_value' => 1234 ) );  // This works.
 	}
 	
