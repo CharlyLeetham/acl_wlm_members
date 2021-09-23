@@ -4,12 +4,12 @@
 		var userID = jQuery(this).attr("data-user-id");
 		var levelID = jQuery(this).attr("data-level-id");
 
-		var data = {
-			'action': 'my_action',
-			'whatever': aclLocalVars.ajax_url      // We pass php values differently!
-		};	
+		// var data = {
+			// 'action': 'my_action',
+			// 'whatever': aclLocalVars.ajax_url      // We pass php values differently!
+		// };	
 
-			jQuery.post(aclLocalVars.ajax_url, data, function(response) {
+			jQuery.post(aclLocalVars.ajax_url, userID, function(response) {
 				alert('Got this from the server: ' + response);
 			});			
 			
