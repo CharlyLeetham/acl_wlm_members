@@ -9,7 +9,7 @@
 			'whatever': aclLocalVars.ajax_url      // We pass php values differently!
 		};	
 
-			jQuery.post(aclLocalVars.ajax_url, userID, function(response) {
+			jQuery.post(aclLocalVars.ajax_url, data, function(response) {
 				alert('Got this from the server: ' + response);
 			});			
 			
