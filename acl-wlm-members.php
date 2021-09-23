@@ -341,9 +341,9 @@ add_shortcode ( 'acl_wlmoptprint', array( &$acl_wlm_members, 'acl_get_wlmopts' )
 add_action( 'wp_enqueue_scripts', array( &$acl_wlm_members, 'acl_incl_js_script' ));
 
 
-add_action( 'wp_ajax_acl_wlm_user_action', array( &$acl_wlm_members, 'acl_wlm_user_action'));
-add_action( 'wp_ajax_acl_wlm_user_actiond', array( &$acl_wlm_members, 'acl_wlm_user_action')); 
+add_action( 'wp_ajax_acl_wlm_user_action', array( &$acl_wlm_members, 'acl_wlm_user_action') );
+add_action( 'wp_ajax_acl_wlm_user_actiond', array( &$acl_wlm_members, 'acl_wlm_user_action') ); 
 
-add_action( 'init', array( &$acl_wlm_members, 'acl_allow_fe_ajax');
+add_action( 'init', array( &$acl_wlm_members, 'acl_allow_fe_ajax') );
 
 ?>
