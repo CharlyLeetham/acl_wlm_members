@@ -6,7 +6,7 @@
 
 		var data = {
 			'action': 'my_action',
-			'whatever': ajax_object.we_value      // We pass php values differently!
+			'whatever': aclLocalVars.ajax_url      // We pass php values differently!
 		};	
 
 			jQuery.post(aclLocalVars.ajax_url, data, function(response) {
