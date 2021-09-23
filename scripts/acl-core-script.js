@@ -5,7 +5,7 @@
 		var levelID = jQuery(this).attr("data-level-id");
         jQuery.ajax({
             type : "post",
-            dataType : "html",
+            dataType : "text",
             url : aclLocalVars.ajax_url,
             data : {action: "acl_wlm_user_action", action: action},
 			/* success: function(response) {
