@@ -3,13 +3,11 @@
         var action = jQuery(this).attr("data-action");
 		var userID = jQuery(this).attr("data-user-id");
 		var levelID = jQuery(this).attr("data-level-id");
-		
-        jQuery.ajax({
-			
-			var data = {
-				'action': 'my_action',
-				'whatever': ajax_object.we_value      // We pass php values differently!
-			};	
+
+		var data = {
+			'action': 'my_action',
+			'whatever': ajax_object.we_value      // We pass php values differently!
+		};	
 
 			jQuery.post(ajax_object.ajax_url, data, function(response) {
 				alert('Got this from the server: ' + response);
