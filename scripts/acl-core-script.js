@@ -3,15 +3,7 @@
         var action = jQuery(this).attr("data-action");
 		var userID = jQuery(this).attr("data-user-id");
 		var levelID = jQuery(this).attr("data-level-id");
-
-		var data = {
-			'action': 'acl_wlm_user_action',
-			'userID': jQuery(this).attr("data-user-id")
-		};	
-
-			// jQuery.post(aclLocalVars.ajax_url, data, function(response) {
-				// alert('Got this from the server: ' + response);
-			// });		//This works.	
+	
 		jQuery.ajax ({
             type: "POST",
             dataType : "html",
