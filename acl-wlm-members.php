@@ -36,7 +36,6 @@ class acl_wlm_members {
 	
 	// ajax user update
 	function acl_wlm_user_action(){
-		global $wpdb;
 		echo "Hello World";
 		wp_die();
 	}

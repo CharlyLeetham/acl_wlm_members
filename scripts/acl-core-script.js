@@ -12,15 +12,17 @@
 			// jQuery.post(aclLocalVars.ajax_url, data, function(response) {
 				// alert('Got this from the server: ' + response);
 			// });		//This works.	
-			
-            type : "post",
+		$.ajax ({
+            type: "POST",
             dataType : "html",
             url : aclLocalVars.ajax_url,
             data : {action: "acl_wlm_user_action"}
-			/* success: function(response) {
-               
+			
+			success: function(data) {
+				console.log( data );              
             },
-            complete: function() {
+			
+            /*complete: function() {
                
             error: function () {
                
@@ -38,4 +40,4 @@
         // prompt promo code not found
 
         // reactivate button
-    // })
+    })
