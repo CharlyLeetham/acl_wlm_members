@@ -38,4 +38,4 @@
         // prompt promo code not found
 
         // reactivate button
-    })
+    // })
