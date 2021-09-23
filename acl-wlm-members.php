@@ -19,9 +19,21 @@ class acl_wlm_members {
 		wp_enqueue_script( 'acl-app-core-script', plugin_dir_url( __FILE__ ) .'/scripts/acl-core-script.js',array() , strtotime("now"), true );
 		$locallize_array = array();
 		$locallize_array['ajax_url'] = admin_url('admin-ajax.php');
-		wp_localize_script('acl-app-core-script', 'aclLocalVars', $locallize_array);
+		// wp_localize_script('acl-app-core-script', 'aclLocalVars', $locallize_array);
+		wp_localize_script( 'ajax-script', 'ajax_object',
+            array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'we_value' => 1234 ) );		
 		
 	}
+	
+	
+
+	function my_action() {
+		global $wpdb;
+		$whatever = intval( $_POST['whatever'] );
+		$whatever += 10;
+			echo $whatever;
+		wp_die();
+	}	
 	
 	// ajax user update
 	function acl_wlm_user_action(){
@@ -337,5 +349,6 @@ add_action( 'wp_enqueue_scripts', array( &$acl_wlm_members, 'acl_incl_js_script'
 
 add_action( 'wp_ajax_acl_wlm_user_action', array( &$acl_wlm_members, 'acl_wlm_user_action') );
 add_action( 'wp_ajax_acl_wlm_user_actiond', array( &$acl_wlm_members, 'acl_wlm_user_action') ); 
+add_action( 'wp_ajax_my_action', array( &$acl_wlm_members, 'my_action' ) );
 
 ?>
