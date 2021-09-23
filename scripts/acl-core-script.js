@@ -9,14 +9,14 @@
 			'userID': jQuery(this).attr("data-user-id")
 		};	
 
-			jQuery.post(aclLocalVars.ajax_url, data, function(response) {
-				alert('Got this from the server: ' + response);
-			});			
+			// jQuery.post(aclLocalVars.ajax_url, data, function(response) {
+				// alert('Got this from the server: ' + response);
+			// });		//This works.	
 			
-            // type : "post",
-            // dataType : "html",
-            // url : aclLocalVars.ajax_url,
-            // data : {action: "acl_wlm_user_action", action: action}
+            type : "post",
+            dataType : "html",
+            url : aclLocalVars.ajax_url,
+            data : {action: "acl_wlm_user_action"}
 			/* success: function(response) {
                
             },
