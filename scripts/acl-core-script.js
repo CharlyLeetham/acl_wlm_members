@@ -6,11 +6,10 @@
 		
         jQuery.ajax({
 			
-			console.log('here');
-            // type : "post",
-            // dataType : "html",
-            // url : aclLocalVars.ajax_url,
-            // data : {action: "acl_wlm_user_action", action: action},
+            type : "post",
+            dataType : "html",
+            url : aclLocalVars.ajax_url,
+            data : {action: "acl_wlm_user_action", action: action}
 			/* success: function(response) {
                
             },
