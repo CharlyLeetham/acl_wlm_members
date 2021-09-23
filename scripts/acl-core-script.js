@@ -3,14 +3,14 @@
         var action = jQuery(this).attr("data-action");
 		var userID = jQuery(this).attr("data-user-id");
 		var levelID = jQuery(this).attr("data-level-id");
-		console.log (levelID);
-		console.log (userID);
 		
         jQuery.ajax({
-            type : "post",
-            dataType : "html",
-            url : aclLocalVars.ajax_url,
-            data : {action: "acl_wlm_user_action", action: action},
+			
+			function (msg) { console.log('here'); }
+            // type : "post",
+            // dataType : "html",
+            // url : aclLocalVars.ajax_url,
+            // data : {action: "acl_wlm_user_action", action: action},
 			/* success: function(response) {
                
             },
