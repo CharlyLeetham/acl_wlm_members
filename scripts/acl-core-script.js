@@ -6,7 +6,7 @@
 		
         jQuery.ajax({
 			
-			function (msg) { console.log('here'); }
+			console.log('here');
             // type : "post",
             // dataType : "html",
             // url : aclLocalVars.ajax_url,
