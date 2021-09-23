@@ -12,7 +12,7 @@
 			// jQuery.post(aclLocalVars.ajax_url, data, function(response) {
 				// alert('Got this from the server: ' + response);
 			// });		//This works.	
-		$.ajax ({
+		jQuery.ajax ({
             type: "POST",
             dataType : "html",
             url : aclLocalVars.ajax_url,
