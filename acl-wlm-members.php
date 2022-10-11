@@ -174,7 +174,9 @@ class acl_wlm_members {
 
 				.
 
-			</style>';
+			</style>
+
+			echo var_export($atts, true);';
 			if ( $displayfunction == "old" ) {
 
 				echo '
