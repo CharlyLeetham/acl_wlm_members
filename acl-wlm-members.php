@@ -96,6 +96,11 @@ class acl_wlm_members {
 			$memmore = $members['members']['member'];  //Get the member details based on the Membership level ID.
 			$allowed  = [$atts['levelid']];	// this is the Membership level we're looking for. This will need to be fed in as a shortcode att.
 			$levelid = $atts['levelid'];
+			if ( !$atts['displayfunction'] ) {
+				$displayfunction = 'old';
+			} else {
+				$displayfunction = 'new';
+			}
 
 			foreach ( $memmore as $k=>$v ) { //Cycle through the members and get their ID's. $memmore only has the basic user details for the members in the level. We need to get more.
 				$levels = wlmapi_get_member_levels($v['id']); //Using the member ID, get the membership level details. We're going to use this information to find those that need approval.
@@ -176,7 +181,7 @@ class acl_wlm_members {
 
 			</style>
 			';
-			echo var_export($atts, true);
+			echo var_export($alc_wlm_atts, true);
 			if ( $displayfunction == "old" ) {
 
 				echo '
