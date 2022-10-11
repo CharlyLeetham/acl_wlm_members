@@ -87,7 +87,8 @@ class acl_wlm_members {
 		} else {
 
 			$alc_wlm_atts = shortcode_atts( array(
-					'levelid' => ''
+					'levelid' => '',
+					'displayfunction' => 'old'
 				), $atts, 'aclwlmmem' );
 
 			$i = 0;
